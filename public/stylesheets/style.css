@@ -1,0 +1,110 @@
+body {
+  padding: 10px;
+  margin-top: 0px;
+  margin-left: 0px;
+  font: 11pt Cambria, Arial, sans-serif, "Lucida Grande", Helvetica;
+}
+
+a {
+  color: #00B7FF;
+  font-size: 24px;
+}
+
+a.pagejumping {
+  text-decoration:none;
+  text-shadow:1px 1px 2px darkgray;
+  color: rgb(64, 107, 199);
+  font-size: 24px;
+  font-style: oblique;
+}
+a.pagejumping:hover {color:#FF3300;text-decoration:underline;}
+
+a.go1 {
+  color: rgb(231, 181, 181);
+  font: 16pt Arial, sans-serif;
+  font-weight: bold;
+  text-shadow:1px 1px 1px black;
+}
+a.go1:hover {
+  color: rgb(252, 206, 39);
+  text-shadow:1px 1px 1px black;
+}
+
+select.s1 {
+  border-width : 2px;
+	border-color : #00bbd4;
+	border-style : solid;
+	border-bottom-width : 2px;
+	border-left-width : 2px;
+	border-right-width : 2px;
+	border-top-width : 2px;
+	font-family : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size : 16pt;
+	font-weight : bold;
+	line-height : 30px;
+}
+
+input.s1 {
+  border-width : 2px;
+	border-color : #00bbd4;
+	border-style : solid;
+	border-bottom-width : 2px;
+	border-left-width : 2px;
+	border-right-width : 2px;
+	border-top-width : 2px;
+	font-family : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size : 16pt;
+	font-weight : bold;
+	line-height : 26px;
+}
+
+td.t1 {
+  background: #fbfbfb;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4), inset 0 0 0 3px white;
+}
+
+iframe {
+  border-style : none;
+}
+
+iframe.wb2, canvas.wb2 {
+  background: white;
+  border-style : dotted;
+  border-width: 2px;
+}
+
+
+button.qr {
+  border: 1px;
+  border-style : solid;
+  width : 150px;
+  height: 30px;
+  background-color: bisque;
+  font-size : 12pt;
+  font-family :  Cambria, Georgia;
+  font-weight: bold;
+}
+button.bar {
+  border: 1px;
+  border-style : solid;
+  width : 150px;
+  height: 30px;
+  background-color: rgb(196, 255, 221);
+  font-size : 12pt;
+  font-family :  Cambria, Georgia;
+  font-weight: bold;
+}
+button.rmb {
+  border: 1px;
+  border-style : solid;
+  width : 180px;
+  height: 32px;
+  background-color: rgb(255, 196, 237);
+  font-size : 12pt;
+  font-family :  Cambria, Georgia;
+  font-weight: bold;
+}
+button.qr:hover, button.bar:hover, button.rmb:hover {
+  cursor: pointer;
+  background-color: aqua;
+}

@@ -1,0 +1,46 @@
+extends layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="/javascripts/section2.js")
+  script(src="/javascripts/RMBconverter.js")
+
+block content
+  h1 Welcome to Section2 page
+
+  h2 Text Area 1: RMB Converter
+  input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
+  | &nbsp; &nbsp;
+  button.rmb(onclick="javascript:doRMBconvert();") 人民币金额转换
+  | &nbsp; &nbsp;
+  input.s1(type="text", id="strRMB", style="width:500px", value="", onfocus="javascript:this.select();")
+
+  h2 Text Area 2: Miscellaneous Test, DIV Dynamic Data etc.
+  p
+    a(href="/helloantv.html") See an awesome graphic chart from AntV
+  p
+    a(href="/helloechart.html") See an awesome graphic chart from ECharts
+  p
+    button(id="b1", class="bttn-unite bttn-sm bttn-primary", onclick="javascript:testclick();") DIV增加内容
+  p
+    // applesum参数传递测试
+    case applesnum 
+      when 0
+        div 
+          p 测试参数传递：Sorry, 没有苹果。
+      default
+        div
+          p 测试参数传递：苹果数量 #{applesnum} 个。
+  
+  // 测试Javascript增加内容
+  | 这里有个DIV叫d1。
+  div(id = "d1")
+  br
+
+  // 测试JQuery增加内容
+  div
+    span 这是span初始文本。
+    p(id = "d2") 这是d2初始文本。
+    ol
+      li Initial Item
+  br

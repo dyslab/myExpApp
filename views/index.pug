@@ -1,0 +1,106 @@
+extends layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="/javascripts/JsBarcode.all.min.js")
+  
+block content
+  h1 #{title}
+  
+  p 
+    h3 Welcome to Index/Router page, Hello Pug!
+
+  script
+    - console.log('You\'re calling the view \'index\'. I logged this message as a confirmation. from DYS')
+
+  // QR码、条形码测试。 QRcode, Barcode test.
+  p
+    hr
+    h3 以下为QR码、条形码测试（Server Side JS + Canvas得到QR码PNG图像）
+    
+    // QRcode test.
+    p
+      table
+        tr(valign="top")
+          td
+            form(id="QRform", action="/qr", target="frameQRCode", method="post")
+              input.s1(type="text", name="strQRCode", id="strQRCode", value="I服啦U，😂囧😅", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
+              input(type="hidden", name="bQRSave", id="bQRSave", value="false")
+          td
+            button.qr(onclick="submitQRcode()") QR Code Output
+            table
+              tr
+                td(width="150px", height="100px", align="center", valign="center", )
+                  b(style="font-size : 18pt") or
+            button.qr(onclick="submitQRsave()") Save PNG Directly
+          td
+            div
+              iframe.wb2(name="frameQRCode", id="frameQRCode", width="168", height="168")
+
+    // Barcode test.
+    p
+      table
+        tr(valign="top")
+          td
+            form(id="Barform", action="/bar", method="post")
+              input.s1(type="text", name="strBarcode", id="strBarcode", value="V1234567890", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
+          td
+            button.bar(onclick="showBarcode()") Barcode Output
+            table
+              tr
+                td(width="150px", height="100px", align="center", valign="center", )
+                  b(style="font-size : 18pt") or
+            button.bar(onclick="javascript:submitBarcode();") Save PNG Directly
+          td
+            div
+              canvas.wb2(id="barcode", width="300", height="160")
+
+  // test the tag <iframe>, JSON data by 'fetch()'', and 17track remote call embedding.
+  p 
+    hr
+    h3 以下为快递查询测试（Server Side JS + JSON数据抓取+iframe实现快递100查询，Client Side JS嵌入实现17Track查询）
+
+  table(width="480")
+    tr
+      td(width="100%", valign="top")
+        form(action="/section2", target="frameTrackingWindow", method="post")
+          select.s1(name="comName", id="comName")
+            option(value="yuantong") 圆通
+            option(value="shentong") 申通
+          | &nbsp; &nbsp;
+          input.s1(type="text", name="trackingNo", id="trackingNo", value="802861965264831906", onfocus="javascript:this.select();", onchange="javascript:changeCom();")
+          | &nbsp; &nbsp;
+          input(class="bttn-material-flat bttn-md bttn-primary", type="submit", value="查询快件")
+    tr
+      td.t1(height="300", align="center")
+        iframe(name="frameTrackingWindow", id="frameTrackingWindow", width="100%" height="100%")
+          | 暂无内容！
+    tr
+      td(height="30")
+        | &nbsp;
+    tr
+      td(valign="top")
+        input.s1(type="text", id="YQNum", value="LZ809939891CN", maxlength=50, onfocus="javascript:this.select();")
+        | &nbsp; &nbsp;
+        input(class="bttn-material-flat bttn-md bttn-primary", type="button", value="17TRACK", onclick="javascript:do17Track();")
+    tr
+      td.t1(align="center")
+        div(id="YQContainer", width="100%")
+          | 暂无查询内容！
+
+  // 超链接及语法测试, Hyperlink and Syntax test.
+  p
+    a.go1(href="http://order.4px.com/order/personal_center/index" target="4PX-Buy") Go 4PX in a specific window.
+  p
+    | Line 1, what does it mean?
+    br 
+    | Line 2, it doesn't make sense.
+    br 
+    | Line 3, then, who are you?
+    br 
+    | Line 4, this is a FINISH line.
+
+
+  script(src="//www.17track.net/externalcall.js")
+  script(src="/javascripts/tracking.js")
+  script(src="/javascripts/codeset.js")

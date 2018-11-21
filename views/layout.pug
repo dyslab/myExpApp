@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= 'App name : ' + title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bttn.min.css')
+
+    block scripts
+  body
+    // block navigator
+    a.pagejumping(href="/") Go to Index/Router 
+    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    a.pagejumping(href="/section2") Go to Section 2
+  
+    block content
