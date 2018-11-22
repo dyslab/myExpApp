@@ -30,12 +30,12 @@ block content
             button.qr(onclick="submitQRcode()") QR Code Output
             table
               tr
-                td(width="150px", height="100px", align="center", valign="center", )
+                td(width="150px", height="50px", align="center", valign="center", )
                   b(style="font-size : 18pt") or
             button.qr(onclick="submitQRsave()") Save PNG Directly
           td
             div
-              iframe.wb2(name="frameQRCode", id="frameQRCode", width="168", height="168")
+              iframe.wb2(name="frameQRCode", id="frameQRCode", width="180", height="180")
 
     // Barcode test.
     p
@@ -48,7 +48,7 @@ block content
             button.bar(onclick="showBarcode()") Barcode Output
             table
               tr
-                td(width="150px", height="100px", align="center", valign="center", )
+                td(width="150px", height="50px", align="center", valign="center", )
                   b(style="font-size : 18pt") or
             button.bar(onclick="javascript:submitBarcode();") Save PNG Directly
           td
@@ -60,17 +60,20 @@ block content
     hr
     h3 以下为快递查询测试（Server Side JS + JSON数据抓取+iframe实现快递100查询，Client Side JS嵌入实现17Track查询）
 
-  table(width="480")
+  table(width="640")
     tr
       td(width="100%", valign="top")
-        form(action="/section2", target="frameTrackingWindow", method="post")
-          select.s1(name="comName", id="comName")
-            option(value="yuantong") 圆通
-            option(value="shentong") 申通
-          | &nbsp; &nbsp;
-          input.s1(type="text", name="trackingNo", id="trackingNo", value="802861965264831906", onfocus="javascript:this.select();", onchange="javascript:changeCom();")
-          | &nbsp; &nbsp;
-          input(class="bttn-material-flat bttn-md bttn-primary", type="submit", value="查询快件")
+        form(id="formTracking", action="/section2", target="frameTrackingWindow", method="post")
+          table
+            tr
+              td
+                select.s1(name="comName", id="comName")
+                  option(value="yuantong") 圆通
+                  option(value="shentong") 申通
+              td
+                input.s1(type="text", name="trackingNo", id="trackingNo", value="802861965264831906", onfocus="javascript:this.select();", onchange="javascript:changeCom();")
+              td
+                button(class="button button--saqui", style="cursor: pointer", data-text="快递查询" onclick="javascript:document.getElementById('formTracking').submit();") 快递查询
     tr
       td.t1(height="300", align="center")
         iframe(name="frameTrackingWindow", id="frameTrackingWindow", width="100%" height="100%")
@@ -80,9 +83,12 @@ block content
         | &nbsp;
     tr
       td(valign="top")
-        input.s1(type="text", id="YQNum", value="LZ809939891CN", maxlength=50, onfocus="javascript:this.select();")
-        | &nbsp; &nbsp;
-        input(class="bttn-material-flat bttn-md bttn-primary", type="button", value="17TRACK", onclick="javascript:do17Track();")
+        table
+          tr
+            td
+              input.s1(type="text", id="YQNum", value="LZ809939891CN", maxlength=50, onfocus="javascript:this.select();")
+            td
+              button(class="button button--tamaya button--border-thick", style="cursor: pointer", data-text="17TRACK" onclick="javascript:do17Track();") 17TRACK
     tr
       td.t1(align="center")
         div(id="YQContainer", width="100%")
