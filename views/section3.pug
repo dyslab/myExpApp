@@ -1,0 +1,19 @@
+extends layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.0/xlsx.full.min.js")
+  script(src="/javascripts/section3.js")
+
+block content
+  h1 Welcome to Section3 page
+
+  h2 Text Area 1: Read Excel file and convert the table data to JSON.
+
+  table
+    tr 
+      td
+        button(id="btnA", class="button button--sacnite", style="width: 360px; cursor: pointer", onclick="javascript:testlocalExcelFile();") Local Excel file reading test
+    tr 
+      td
+        textarea(id="textA", cols="20", rows="3") no ouput data now.

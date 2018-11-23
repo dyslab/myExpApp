@@ -31,4 +31,9 @@ router.post('/section2', function(req, res, next) {
   // res.render('section2', { applesnum: 0, links: linkLog });
 });
 
+/* GET Section3 page. */
+router.get('/section3', function(req, res, next) {
+  res.render('section3');
+});
+
 module.exports = router;

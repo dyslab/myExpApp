@@ -2,8 +2,16 @@ extends layout
 
 block scripts
   script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="/javascripts/section2.js")
   script(src="/javascripts/RMBconverter.js")
+  script(src="/javascripts/section2.js")
+  script
+    | $("document").ready(function(){
+    |   $("#btn1").click(function(){
+    |     $("span").append("span元素后加文本");
+    |     $("#d2").append("<b>&nbsp;对象d2后增加一段文本.&nbsp;</b>");
+    |     $("ol").append("<li>Appended item</li>");
+    |   });
+    | });
 
 block content
   h1 Welcome to Section2 page
@@ -24,8 +32,7 @@ block content
     a(href="/ButtonStylesInspiration.html") See some awesome button effects which were powered by CSS3
   p
     div
-      button(id="b1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();")
-        span DIV增加内容
+      button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
   
   br
   br
@@ -49,7 +56,8 @@ block content
   // 测试JQuery增加内容
   div
     span 这是span初始文本。
-    p(id = "d2") 这是d2初始文本。
+    p(id = "d2") 
+      b 这是对象d2初始文本。
     ol
       li Initial Item
   br
