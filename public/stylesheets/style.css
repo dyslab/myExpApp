@@ -101,7 +101,5 @@ button.qr:hover, button.bar:hover, button.rmb:hover {
 textarea {
   border: 1px;
   border-style : solid;
-  width : 640px;
-  height: 240px;
   background-color: rgb(252, 251, 199);
 }

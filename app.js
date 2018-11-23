@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var qrRouter = require('./routes/qrtest');
 var barRouter = require(__dirname.replace("\\","/") + '/routes/bartest');
+var excelRouter = require('./routes/exceltest');
 
 var app = express();
 
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/qr', qrRouter);
 app.use('/bar', barRouter);
+app.use('/excel',excelRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

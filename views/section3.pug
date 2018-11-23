@@ -13,7 +13,9 @@ block content
   table
     tr 
       td
-        button(id="btnA", class="button button--sacnite", style="width: 360px; cursor: pointer", onclick="javascript:testlocalExcelFile();") Local Excel file reading test
-    tr 
+        button(id="btnA", class="button button--isi", style="width: 260px; cursor: pointer") Excel File To JSON Object
       td
-        textarea(id="textA", cols="20", rows="3") no ouput data now.
+        button(id="btnB", class="button button--isi", style="width: 260px; cursor: pointer") Excel File To JSON String
+    tr 
+      td.t1(colspan="2", width="960", height="480")
+        iframe(name="frameExcelChart", id="frameExcelChart", width="100%" height="100%")

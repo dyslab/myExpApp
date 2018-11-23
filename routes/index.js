@@ -1,16 +1,17 @@
 var express = require('express');
 var router = express.Router();
+const apptitle = 'myExpApp';
 
 var trackingLink = '';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'myExpApp' });
+  res.render('index', { title: apptitle + ' Index/Router page' });
 });
 
 /* GET Section2 page. */
 router.get('/section2', function(req, res, next) {
-  res.render('section2', { title: 'myExpApp', applesnum: 10 });
+  res.render('section2', { title: apptitle + ' Section 2', applesnum: 10 });
 });
 
 /* POST Section2 page. */
@@ -26,14 +27,11 @@ router.post('/section2', function(req, res, next) {
   fetch(trackingLink)
     .then(res => res.json())
     .then(json => res.render('section2-1',json));
-    
-  // res.json(req.body);
-  // res.render('section2', { applesnum: 0, links: linkLog });
 });
 
 /* GET Section3 page. */
 router.get('/section3', function(req, res, next) {
-  res.render('section3');
+  res.render('section3', { title: apptitle + ' Section 3' });
 });
 
 module.exports = router;
