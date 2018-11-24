@@ -8,14 +8,26 @@ block scripts
 block content
   h1 Welcome to Section3 page
 
-  h2 Text Area 1: Read Excel file and convert the table data to JSON.
+  h2 Text Area 1: Read Excel file then convert the sheet data to JSON and Chart.
 
-  table
+  table(width="800")
     tr 
       td
-        button(id="btnA", class="button button--isi", style="width: 260px; cursor: pointer") Excel File To JSON Object
+        button(id="btnA", class="button button--isi", style="width: 200px; cursor: pointer") Excel To JSON Object 对象输出
       td
-        button(id="btnB", class="button button--isi", style="width: 260px; cursor: pointer") Excel File To JSON String
+        button(id="btnB", class="button button--isi", style="width: 200px; cursor: pointer") Excel To JSON String 字符串输出
+      td
+        button(id="btnC", class="button button--isi", style="width: 200px; cursor: pointer") Excel To AntV Chart AntV图表输出
+    tr
+      td
+      td
+      td
+        form(id="formAntV", method="get", target="frameExcelChart", action="/excel2antv")
+          | AntV Chart Type:&nbsp;
+          select(name="antv_type")
+            option(value="hbar") Horizental Bar Chart
+            option(value="vbar") Vertical Bar Chart
+            option(value="pie") Pie Chart
     tr 
-      td.t1(colspan="2", width="960", height="480")
+      td.t1(colspan="3", width="100%", height="400")
         iframe(name="frameExcelChart", id="frameExcelChart", width="100%" height="100%")

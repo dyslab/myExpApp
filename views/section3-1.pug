@@ -3,7 +3,9 @@ extends iframe-layout
 block content
   
   p 
-    textarea(id="textA", cols="120", rows="5") #{jsonstring}
+    textarea(id="textA", cols="100", rows="10") #{chart_title},
+      each obj in chart_data 
+        | #{obj.aname},
+        | #{obj.avalue},
 
-
-  h1 This is Section3-1.
+  h1 This is Section3-1. (type = 101)

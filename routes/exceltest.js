@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const xlxsfilename = __dirname + '\\bufferdata\\salesdata.xlsx';
+const xlxsfilename = __dirname + '\\bufferdata\\salesdata_sample.xlsx';
 var result = { 'chart_title': 'error_gen' };
 
 function ChartSalesData(name, value) {
@@ -61,7 +61,7 @@ router.get('/', function(req, res, next){
             break;
         case '102': 
             // Send to Pug template as a JSON String.
-            res.render('section3-1', { 'jsonstring': result.toString() } );
+            res.render('section3-2', { 'JSONstring': result.toString() } );
             break;
         default:
             // It's an invalid output type parameter.

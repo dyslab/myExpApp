@@ -1,0 +1,55 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width,height=device-height")
+
+    block title
+
+    link(rel='stylesheet', href='/stylesheets/ant-layout.css')
+  body
+    div(id="mountNode")
+
+    script 
+      | //Fixing iframe window.innerHeight 0 issue in Safari
+      | document.body.clientHeight;
+    script(src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js")
+    script(src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js")
+    
+    script
+      block data
+      | var chart = new G2.Chart({
+      |   container: 'mountNode',
+      |   forceFit: true,
+      |   height: window.innerHeight
+      | });
+      | chart.source(data, {
+      |   percent: {
+      |     formatter: function formatter(val) {
+      |       val = parseInt(val * 100) + '%';
+      |       return val;
+      |     }
+      |   }
+      | });
+      | chart.coord('theta');
+      | chart.tooltip({
+      |   showTitle: false
+      | });
+      | chart.intervalStack().position('percent').color('item').label('percent', {
+      |   offset: -40,
+      |   // autoRotate: false,
+      |   textStyle: {
+      |     textAlign: 'center',
+      |     shadowBlur: 2,
+      |     shadowColor: 'rgba(0, 0, 0, .45)'
+      |   }
+      | }).tooltip('item*count', function(item, count) {
+      |   return {
+      |     name: item,
+      |     value: count
+      |   };
+      | }).style({
+      |   lineWidth: 1,
+      |   stroke: '#fffaaa'
+      | });
+      | chart.render();
