@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>Hotmarzz 2018年美国销量分布情况</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="mountNode"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script>
+$.getJSON('geodata/usa.geo.json?nowrap', function(GeoJSON) {
+  $.getJSON('geodata/2018-hotmarzz-salesdata-us.json?nowrap', function(data) {
+    var ds = new DataSet();
+    var mapDv = ds.createView('map').source(GeoJSON, {
+      type: 'GeoJSON'
+    });
+    var regionDv = ds.createView().source(data);
+    regionDv.transform({
+      type: 'geo.region',
+      geoDataView: mapDv,
+      field: 'State',
+      as: ['longitude', 'latitude']
+    });
+    var centroidDv = ds.createView().source(data);
+    centroidDv.transform({
+      type: 'geo.centroid',
+      geoDataView: mapDv,
+      field: 'State',
+      as: ['longitude', 'latitude']
+    });
+
+    var chart = new G2.Chart({
+      container: 'mountNode',
+      forceFit: true,
+      height: window.innerHeight,
+      padding: 0
+    });
+    chart.scale({
+      longitude: {
+        sync: true
+      },
+      latitude: {
+        sync: true
+      }
+    });
+    chart.legend(false);
+    chart.axis(false);
+    chart.tooltip({ showTitle: false });
+
+    var regionView = chart.view();
+    regionView.source(regionDv);
+    regionView.polygon().position('longitude*latitude').color('Quantity', '#e5e0f5-#3154a3').style({
+      stroke: '#999',
+      lineWidth: 1
+    });
+
+    var centroidView = chart.view();
+    centroidView.source(centroidDv);
+    centroidView.point().position('longitude*latitude').size(0).label('code', {
+      offset: 0
+    });
+
+    chart.render();
+  });
+});
+</script>
+</body>
+</html>

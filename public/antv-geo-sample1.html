@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=device-height">
+    <title>带热力图的地图</title>
+    <style>::-webkit-scrollbar{display:none;}html,body{overflow:hidden;height:100%;margin:0;}</style>
+</head>
+<body>
+<div id="mountNode"></div>
+<script>/*Fixing iframe window.innerHeight 0 issue in Safari*/document.body.clientHeight;</script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js"></script>
+<script src="https://gw.alipayobjects.com/os/antv/assets/lib/jquery-3.2.1.min.js"></script>
+<script>
+$.getJSON('geodata/usa.geo.json', function(GeoJSON) {
+  var userData = [];
+  var geoDv = new DataSet.View().source(GeoJSON, {
+    type: 'GeoJSON'
+  }).transform({
+    type: 'map',
+    callback: function callback(row) {
+      userData.push({
+        longitude: row.centroidX,
+        latitude: row.centroidY,
+        name: row.name,
+        value: Math.random() * (1000 - 1)
+      });
+      return row;
+    }
+  });
+
+  var chart = new G2.Chart({
+    container: 'mountNode',
+    forceFit: true,
+    height: window.innerHeight,
+    padding: 0
+  });
+  chart.scale({
+    latitude: {
+      sync: true,
+      nice: false
+    },
+    longitude: {
+      sync: true,
+      nice: false
+    }
+  });
+  chart.legend(false);
+  chart.axis(false);
+  chart.tooltip(false);
+
+  var geoView = chart.view();
+  geoView.source(geoDv);
+  geoView.polygon().position('longitude*latitude').color('grey').label('name', {
+    offset: 0
+  });
+
+  var userView = chart.view();
+  userView.source(userData);
+  userView.heatmap().position('longitude*latitude').color('value', '#F51D27-#FA541C-#FF8C12-#FFC838-#FAFFA8-#80FF73-#12CCCC-#1890FF-#6E32C2').size(window.innerHeight / 20).style({
+    blur: window.innerHeight / 15
+  });
+  chart.render();
+});
+</script>
+</body>
+</html>
