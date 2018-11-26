@@ -6,11 +6,11 @@ block scripts
   script(src="/javascripts/section3.js")
 
 block content
-  h1 Welcome to Section3 page
+  h2 Welcome to Section3 page
 
-  h2 Text Area 1: Read Excel file then convert the sheet data to JSON and AntV Chart.
+  h3 Text Area: Read Excel file then convert the sheet data to JSON and AntV Chart.
 
-  table(width="800")
+  table(width="770")
     tr 
       td
         button(id="btnA", class="button button--isi", style="width: 200px; cursor: pointer") Excel To JSON Object 对象输出
@@ -29,7 +29,7 @@ block content
             option(value="vbar") Vertical Bar Chart
             option(value="pie") Pie Chart
     tr 
-      td.t1(colspan="3", width="100%", height="400")
+      td.t1(colspan="3", width="100%", height="360")
         iframe(name="frameExcelChart", id="frameExcelChart", width="100%" height="100%")
     tr 
       td
