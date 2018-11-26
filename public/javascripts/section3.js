@@ -18,4 +18,19 @@ $("document").ready(function(){
         var formA = document.getElementById("formAntV");
         formA.submit();
     });
+
+    $("#btnGeoA").click(function(){
+        var frameA = document.getElementById("frameExcelChart");
+        frameA.contentWindow.location.href = "/antv-geo-sample1.html";
+    });
+
+    $("#btnGeoB").click(function(){
+        var frameA = document.getElementById("frameExcelChart");
+        frameA.contentWindow.location.href = "/antv-geo-sample2.html";
+    });
+
+    $("#btnGeoC").click(function(){
+        var frameA = document.getElementById("frameExcelChart");
+        frameA.contentWindow.location.href = "/antv-geo-sample3.html";
+    });
 });

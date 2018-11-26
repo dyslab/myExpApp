@@ -8,7 +8,7 @@ block scripts
 block content
   h1 Welcome to Section3 page
 
-  h2 Text Area 1: Read Excel file then convert the sheet data to JSON and Chart.
+  h2 Text Area 1: Read Excel file then convert the sheet data to JSON and AntV Chart.
 
   table(width="800")
     tr 
@@ -31,3 +31,10 @@ block content
     tr 
       td.t1(colspan="3", width="100%", height="400")
         iframe(name="frameExcelChart", id="frameExcelChart", width="100%" height="100%")
+    tr 
+      td
+        button(id="btnGeoA", class="button button--ujarak", style="width: 200px; cursor: pointer") Geo Map Chart Sample 1
+      td
+        button(id="btnGeoB", class="button button--ujarak", style="width: 200px; cursor: pointer") Geo Map Chart Sample 2
+      td
+        button(id="btnGeoC", class="button button--ujarak", style="width: 200px; cursor: pointer") Geo Map Chart Sample 3
