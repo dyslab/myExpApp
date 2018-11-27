@@ -173,7 +173,7 @@ $("document").ready(function(){
     });
 
     $("#btnB").click(function(){
-        window.alert("test 2");
+        window.alert("ready to upload.");
     });
 
     $("#btnC").click(function(){
