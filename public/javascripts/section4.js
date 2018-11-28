@@ -1,5 +1,13 @@
 //  JQuery: 
 $("document").ready(function(){
+    // hide all panels in the content area.
+    function hideAllPanel() {
+        $("#ecPanel_hbar").hide();
+        $("#ecPanel_vbar").hide();
+        $("#ecPanel_pie").hide();
+        $("#uploadPanel").hide();
+    }
+
     $("#btnA").click(function(){
         // set chart's bar data here
         var chartdata = {
@@ -35,17 +43,16 @@ $("document").ready(function(){
         }
         
         var tmp_series = new Array();
-        var ect = document.getElementById("ec_type").value;
+        var ect = $("#ec_type").val();
+        console.log(ect);
 
         // Hide all panels at first.
-        document.getElementById("ecPanel_hbar").hidden = true;
-        document.getElementById("ecPanel_vbar").hidden = true;
-        document.getElementById("ecPanel_pie").hidden = true;
+        hideAllPanel();
 
         // Set chart options depending on the value of "ec_type".
         switch (ect) {
             case "vbar":
-                document.getElementById("ecPanel_vbar").hidden = false;
+                $("#ecPanel_vbar").show();
 
                 for (var i=0; i<chartdata.series.length; i++) {
                     tmp_series[i] = new setSeriesData(chartdata.series[i].name, "bar", chartdata.series[i].data)
@@ -106,7 +113,7 @@ $("document").ready(function(){
                     ] 
                 };
 
-                document.getElementById("ecPanel_pie").hidden = false;
+                $("#ecPanel_pie").show();
 
                 var ec_pie = echarts.init(document.getElementById("ecPanel_pie"));
                 var ecoption_pie = {
@@ -143,7 +150,7 @@ $("document").ready(function(){
                 ec_pie.setOption(ecoption_pie);
                 break;
             default:    // It means you chose "hbar"
-                document.getElementById("ecPanel_hbar").hidden = false;
+                $("#ecPanel_hbar").show();
 
                 for (var i=0; i<chartdata.series.length; i++) {
                     tmp_series[i] = new setSeriesData(chartdata.series[i].name, "bar", chartdata.series[i].data)
@@ -173,11 +180,17 @@ $("document").ready(function(){
     });
 
     $("#btnB").click(function(){
-        window.alert("ready to upload.");
+        hideAllPanel();
+
+        $("#uploadPanel").show(0, function(){
+            // window.alert("ready to upload.");
+            // $("#frameUpload").attr("src", "/upload/form");
+        });
     });
 
     $("#btnC").click(function(){
-        //var formA = document.getElementById("formAntV");
-        //formA.submit();
+        hideAllPanel();
+
+        // window.alert("ready to export.");
     });
 });

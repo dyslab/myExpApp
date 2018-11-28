@@ -1,0 +1,21 @@
+extends iframe-layout
+
+block content
+  // errcode = -1, errstring = 'Upload Failed! Multer Error happened.';
+  // errcode = -2, errstring = 'Upload Failed! Unknown Error happened.';
+  // errcode = 0, errstring = 'Upload Succeeded.';
+  case errcode
+    when "-1"
+      p 上传结果：Upload Failed! Multer Error happened. 上传失败！Multer中间件错误。
+    when "-2"
+      p 上传结果：Upload Failed! Unknown Error happened. 上传失败！未知错误。
+    default
+      p 上传结果：Upload Succeeded. 上传成功！
+
+  p 上传文件信息：
+    a(href="/upload/cache/"+uploadedfile.filename) #{uploadedfile.filename}
+
+  p
+    a(href="/upload/form") 继续上传文件
+
+  h2 This is Section4-Upload-Result. (for testing upload file with Multer)

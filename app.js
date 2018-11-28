@@ -7,9 +7,11 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var qrRouter = require('./routes/qrtest');
+// validate the file path that constructed via the variable "__dirname".
 var barRouter = require(__dirname.replace("\\","/") + '/routes/bartest');
 var excelRouter = require('./routes/exceltest');
 var excel2antvRouter = require('./routes/excel2antv');
+var uploadRouter = require('./routes/uploadtest');
 
 var app = express();
 
@@ -29,6 +31,7 @@ app.use('/qr', qrRouter);
 app.use('/bar', barRouter);
 app.use('/excel',excelRouter);
 app.use('/excel2antv',excel2antvRouter);
+app.use('/upload',uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

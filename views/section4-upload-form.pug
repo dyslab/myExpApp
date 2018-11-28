@@ -1,0 +1,14 @@
+extends iframe-layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="/javascripts/section4-upload-form.js")
+
+block content
+  form(action="/upload/handle", name="uploadForm", method="post", enctype="multipart/form-data")
+    input(type="file", name="srcFile", id="srcFile", style="width:85%")
+    input(type="submit", value="上传文件", style="cursor:pointer")
+  p
+    b 注：上传文件仅限JSON、XLS、XLSX文件，大小限制在2M以内。
+
+  h2 This is Section4-Upload-Form. (for testing upload file with Multer)
