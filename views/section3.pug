@@ -13,17 +13,17 @@ block content
   table(width="770")
     tr 
       td
-        button(id="btnA", class="button button--isi", style="width: 200px; cursor: pointer") Excel To JSON Object 对象输出
+        button(id="btnA", class="button button--isi", style="width: 210px; cursor: pointer") Excel To JSON Object 对象输出
       td
-        button(id="btnB", class="button button--isi", style="width: 200px; cursor: pointer") Excel To JSON String 字符串输出
+        button(id="btnB", class="button button--isi", style="width: 210px; cursor: pointer") Excel To JSON String 字符串输出
       td
-        button(id="btnC", class="button button--isi", style="width: 200px; cursor: pointer") Excel To AntV Chart AntV图表输出
+        button(id="btnC", class="button button--isi", style="width: 210px; cursor: pointer") Excel To AntV Chart AntV图表输出
     tr
       td
       td
       td
         form(id="formAntV", method="get", target="frameExcelChart", action="/excel2antv")
-          | AntV Chart Type:&nbsp;
+          | Chart Type:&nbsp;
           select(name="antv_type")
             option(value="hbar") Horizental Bar Chart
             option(value="vbar") Vertical Bar Chart

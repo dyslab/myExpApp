@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const xlxsfilename = __dirname + '\\bufferdata\\salesdata_sample.xlsx';
+var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
 var result = { 'chart_title': 'error_gen' };
 
 function ChartSalesData(name, value) {

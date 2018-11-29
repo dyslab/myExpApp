@@ -6,6 +6,7 @@ $("document").ready(function(){
         $("#ecPanel_vbar").hide();
         $("#ecPanel_pie").hide();
         $("#uploadPanel").hide();
+        $("#exportPanel").hide();
     }
 
     $("#btnA").click(function(){
@@ -191,6 +192,8 @@ $("document").ready(function(){
     $("#btnC").click(function(){
         hideAllPanel();
 
-        // window.alert("ready to export.");
+        $("#exportPanel").show(0, function(){
+            // window.alert("ready to export.");
+        });
     });
 });

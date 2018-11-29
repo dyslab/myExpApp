@@ -1,0 +1,31 @@
+extends iframe-layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="/javascripts/section4-export.js")
+
+block content
+  table(width="100%", border="0")
+    tr
+      td(id="contentTD", width="70%", valign="top")
+        table(id="tbContent", width="100%")
+      td(width="30%", align="right", valign="top")
+        div(id="canvasImg", width="150", height="150")
+        br
+        br
+        button(class="export") Export to JSON
+        br
+        br
+        button(class="export") Export to CSV
+        br
+        br
+        button(class="export") Export to XLSX
+        br
+        br
+        button(class="export") Export to PDF
+        br
+        br
+
+  br
+  p
+    h3 This is Section4 export test page.

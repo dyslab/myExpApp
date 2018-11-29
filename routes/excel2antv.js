@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const xlxsfilename = __dirname + '\\bufferdata\\salesdata.xlsx';
+var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
 var result = { 'chart_title': 'error_gen' };
 
 // Object for AntV HBar and VBar
@@ -48,7 +48,7 @@ router.get('/', function(req, res, next){
             csdArray[i-1] = tmp;
 
             // Get the maximum value
-            console.log(tmp.value);
+            // console.log(tmp.value);
             tmpValue = parseInt(tmp.value);
             tmpCount += tmpValue;
             if ((i > 0) && (tmpValue > cvMax)) {
@@ -81,7 +81,7 @@ router.get('/', function(req, res, next){
             }
 
             // Create Pie Chart Data Object 
-            console.log(csdArrayPie);
+            // console.log(csdArrayPie);
             result = JSON.stringify(csdArrayPie);
             result_fixed = result.toString().replace(/"item":/g, 'item:').replace(/"count":/g,'count:').replace(/"percent":/g,'percent:').replace(/"/g,'\'');
             result_json = { charttitle: (ctv? ctv.v : 'undefined'), chartmaxvalue: cvMax, chartdata: result_fixed };
@@ -108,7 +108,7 @@ router.get('/', function(req, res, next){
         }
     }
     catch(e) {
-        console.log('Processing error happened...');
+        console.log(e);
         res.send('Processing Error or Invalid Parameter.');
     }
 });
