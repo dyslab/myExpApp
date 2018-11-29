@@ -7,8 +7,15 @@ block scripts
 block content
   form(action="/upload/handle", name="uploadForm", method="post", enctype="multipart/form-data")
     input(type="file", name="srcFile", id="srcFile", style="width:85%")
-    input(type="submit", value="上传文件", style="cursor:pointer")
-  p
-    b 注：上传文件仅限JSON、XLS、XLSX文件，大小限制在2M以内。
+    p 注：上传文件仅限
+      span(id="limitedextnameLabel")
+      | 文件，大小限制在
+      span(id="limitedsizeLabel")
+      | 以内。
+    p
+      div(style="width:95%", align="right")
+        input(type="submit", value="开始上传文件", style="cursor:pointer; width:180px; height:50px; background:#456590; color:#EEEEEE; font-size:14pt")
 
-  h2 This is Section4-Upload-Form. (for testing upload file with Multer)
+  br
+  p
+    h3 This is Section4-Upload-Form. (Testing upload file with Multer)

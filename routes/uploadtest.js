@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var multer = require('multer');
 
+// Set destination path and file name regulation for multer.
 var storage = multer.diskStorage({
   destination: function(req, file, cb){
     cb(null, './public/uploadcache');
@@ -17,10 +18,12 @@ var storage = multer.diskStorage({
 // Accept only one file.
 var upload = multer( {storage: storage} ).single('srcFile');
 
+// GET to the upload form page.
 router.get('/form', function(req, res, next) {
   res.render('section4-upload-form');
 });
 
+// POST to the upload process
 router.post('/handle', upload, function(req, res, next) {
   var errcode = 0;
 
@@ -45,7 +48,7 @@ router.post('/handle', upload, function(req, res, next) {
   res.render('section4-upload-result', { errcode: errcode, uploadedfile: req.file });
 });
 
-// redirect to the real uploaded file's path. 
+// GET redirect to the real uploaded file's directory 
 router.get('/cache/:filename', function(req, res, next) {
   res.redirect('/uploadcache/' + req.params.filename);
 });

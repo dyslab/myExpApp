@@ -2,7 +2,10 @@
 $("document").ready(function(){
     // set the limited maximun size and ext filename of upload file here (size unit: MB)
     var nLimitedSize = 2;
-    var sLimitedExtName = "JSON/XLS/XLSX";  // must be uppercase.
+    var sLimitedExtName = "PNG/JPG/JPEG/XLS/XLSX/JSON";  // must be uppercase.
+
+    $("#limitedextnameLabel").html("<I>" + sLimitedExtName + "</I>");
+    $("#limitedsizeLabel").html("<B>" + nLimitedSize + "MB</B>");
 
     $("form").submit(function(e){
         // Validate the upload file's suffix name and size.
