@@ -1,31 +1,35 @@
 extends iframe-layout
 
 block scripts
+  link(rel='stylesheet', href='/stylesheets/section4-export.css')
   script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="/javascripts/section4-export.js")
 
 block content
+  script document.body.clientHeight; // Fixing iframe window.innerHeight 0 issue in Safari
+  script(src="https://gw.alipayobjects.com/os/antv/pkg/_antv.g2-3.4.1/dist/g2.min.js")
+  script(src="https://gw.alipayobjects.com/os/antv/pkg/_antv.data-set-0.10.1/dist/data-set.min.js")
+
   table(width="100%", border="0")
     tr
-      td(id="contentTD", width="70%", valign="top")
-        table(id="tbContent", width="100%")
-      td(width="30%", align="right", valign="top")
-        div(id="canvasImg", width="150", height="150")
+      td(id="contentTD", valign="top")
+        table(class="tbContent", width="100%", border="0", cellspacing="1", cellpadding="1", align="center")
+        br
+        div(id="divChart", width="100%") AntV Linear Chart Demo. Click 
+          span(class="refreshChart") here
+          | &nbsp;to refresh. 
+          span(class="refreshChart") 点此刷新图表
+      td(width="200", align="right", valign="top")
+        button(id="btnExportCSV", class="export") Export to CSV
         br
         br
-        button(class="export") Export to JSON
+        button(id="btnExportXLSX", class="export") Export to XLSX
         br
         br
-        button(class="export") Export to CSV
+        button(id="btnExportPDF", class="export") Export to PDF
         br
         br
-        button(class="export") Export to XLSX
-        br
-        br
-        button(class="export") Export to PDF
-        br
-        br
-
-  br
+        button(id="btnExportJSON", class="export") Export to JSON
   p
     h3 This is Section4 export test page.
+
+  script(src="/javascripts/section4-export.js")

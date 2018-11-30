@@ -1,0 +1,35 @@
+table.tbContent {
+    background: #AAAACC
+}
+
+td.tdContent {
+    background: #FFFFFF
+}
+
+input.s1, input.s2 {
+    border: 0px;
+    height: 20px;
+    font-family: Cambria, Aria, Calibri;
+    font-size: 12px
+}
+
+button.export {
+    font-family: Cambria, Aria, Calibri;
+    font-size: 13pt;
+    cursor: pointer;
+    color:#000000;
+    background: rgb(193, 222, 226);
+    width: 150px;
+    height: 30px
+}
+
+button.export:hover {
+    color: rgb(255, 255, 255);
+    background: #318da0
+}
+
+span.refreshChart {
+    color: #55f;
+    border-bottom: 1px dotted black;
+    cursor: pointer;
+}

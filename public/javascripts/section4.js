@@ -1,5 +1,5 @@
 //  JQuery: 
-$("document").ready(function(){
+$(document).ready(function(){
     // hide all panels in the content area.
     function hideAllPanel() {
         $("#ecPanel_hbar").hide();

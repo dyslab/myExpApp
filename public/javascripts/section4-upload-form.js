@@ -1,5 +1,5 @@
 //  JQuery: 
-$("document").ready(function(){
+$(document).ready(function(){
     // set the limited maximun size and ext filename of upload file here (size unit: MB)
     var nLimitedSize = 2;
     var sLimitedExtName = "PNG/JPG/JPEG/XLS/XLSX/JSON";  // must be uppercase.

@@ -3,7 +3,7 @@
 //  type:
 //      101 --- output JSON Object, 
 //      102 --- output JSON String,
-$("document").ready(function(){
+$(document).ready(function(){
     $("#btnA").click(function(){
         var frameA = document.getElementById("frameExcelChart");
         frameA.contentWindow.location.href = "/excel?type=101";
