@@ -1,0 +1,4 @@
+//  JQuery: 
+$(document).ready(function(){
+    //
+});

@@ -40,13 +40,13 @@ $(document).ready(function(){
         return "<tr class='dataRow'><td class='tdContent' align='center'><button class='removeRow'>-</button></td><td class='tdContent' align='center'><input type='text' class='s1' value='" + s1 + "'></td><td class='tdContent' align='center'><input type='text' class='s2' value='" + s2 + "'></td><td class='tdContent' align='center'><button class='addRow'>+</button></td></tr>";
     }
     
-    // Generate an array in JSON object format for Chart and Export.
-    function genChartDataFromTable() {
+    // Generate an array in JSON object format for Chart and JSON file Export.
+    function genJsonDataFromTable() {
         var tmpData = [];
         var tmpS1 = $("input.s1");
         var tmpS2 = $("input.s2");
         
-        // Get chart data from "1" of Array. Skip the title data.
+        // Get chart/json data from "1" of Array. Skip the title data.
         for (var p, i=1; i<tmpS1.length; i++) {
             p = parseInt(tmpS2.eq(i).val());
             if (p && p != 'NaN')
@@ -54,6 +54,19 @@ $(document).ready(function(){
             else
                 tmpData.push({ month: tmpS1.eq(i).val(), value: 0 });
         }
+
+        return tmpData;
+    }
+
+    // Generate an array object for CSV and EXCEL file Export.
+    function genArrayDataFromTable() {
+        var tmpData = [];
+        var tmpS1 = $("input.s1");
+        var tmpS2 = $("input.s2");
+        
+        // Get chart data from "0" of Array. Include the title data.
+        for (var i=0; i<tmpS1.length; i++)
+            tmpData.push([ tmpS1.eq(i).val(), tmpS2.eq(i).val() ]);
 
         return tmpData;
     }
@@ -100,24 +113,66 @@ $(document).ready(function(){
         // When the span with class "refreshChart" was clicked.
         $("span.refreshChart").click( function(){
             // Refresh chart
-            chart.changeData(genChartDataFromTable());
+            chart.changeData(genJsonDataFromTable());
         });
 
+        // When "Export to JSON" was clicked.
         $("#btnExportJSON").click( function(){
             // Form POST method
             var postForm = $("<form method='POST' action='/export/json'></form>");
             postForm.appendTo( "body" );
-            postForm.append("<input type='hidden' name='jsondata' value='" + JSON.stringify(genChartDataFromTable()) + "'>");
+            postForm.append("<input type='hidden' name='jsondata' value='" + JSON.stringify(genJsonDataFromTable()) + "'>");
             postForm.submit();
 
             /* Ajax POST method
-                $.post("/export/json", { jsondata: JSON.stringify(genChartDataFromTable()) }, function(data, status, xhr) {
+                $.post("/export/json", { jsondata: JSON.stringify(genJsonDataFromTable()) }, function(data, status, xhr) {
                     // POST data goes fine.
                     // window.alert("Get Data : " + xhr.getResponseHeader("Content-Disposition"));
                 }).fail(function(){
                     window.alert("Data Transport Error.");
                 });
             */
+        });
+
+        // When "Export to CSV" was clicked.
+        $("#btnExportCSV").click( function(){
+            // Form POST method
+            var postForm = $("<form method='POST' action='/export/csv'></form>");
+            postForm.appendTo( "body" );
+            postForm.append("<input type='hidden' name='aoadata' value='" + JSON.stringify(genArrayDataFromTable()) + "'>");
+            postForm.submit();
+
+            /*
+                // Validating "JSON.parse" and it's been proved that tmpA was correctly converted to an array again.
+                window.alert(tmpA);
+                var tmpB = JSON.parse(tmpA);
+
+                var tmpC = [];
+                for (var i=0; i<tmpB.length; i++) {
+                    for (var j=0; j<tmpB[i].length; j++)
+                        tmpC.push(tmpB[i][j]);
+                }
+                window.alert(tmpC.join("***"));
+            */
+        });
+
+        // When "Export to XLSX" was clicked.
+        $("#btnExportXLSX").click( function(){
+            // Form POST method
+            var postForm = $("<form method='POST' action='/export/xlsx'></form>");
+            postForm.appendTo( "body" );
+            postForm.append("<input type='hidden' name='aoadata' value='" + JSON.stringify(genArrayDataFromTable()) + "'>");
+            postForm.submit();
+        });
+
+        // When "Export to PDF" was clicked.
+        $("#btnExportPDF").click( function(){
+            // Form POST method
+            var postForm = $("<form method='POST' action='/export/pdf'></form>");
+            postForm.appendTo( "body" );
+            postForm.append("<input type='hidden' name='aoadata' value='" + JSON.stringify(genArrayDataFromTable()) + "'>");
+            if (chart) postForm.append("<input type='hidden' name='imgdata' value='" + chart.toDataURL() + "'>");
+            postForm.submit();
         });
     });
 });

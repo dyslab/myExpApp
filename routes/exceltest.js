@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var XLSX = require('xlsx');
 
 var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
 var result = { 'chart_title': 'error_gen' };
@@ -16,7 +17,6 @@ function ChartData(title, data) {
 
 router.get('/', function(req, res, next){
     try {
-        var XLSX = require('xlsx');
         var wb = XLSX.readFile(xlxsfilename);
         
         // Data number: Get the cell value of "B1" in Sheet "Summary"
@@ -68,6 +68,39 @@ router.get('/', function(req, res, next){
             res.send('Invalid parameter: type.');
             break;
     }
+});
+
+// Generate a XLSX file and return a download link.
+function GenerateFile(data) {
+    var urlPath = '/download/download_sample.xlsx';
+    var actualFilePath = './public' + urlPath;  // "./public" is the root path for client side.
+    
+    // Manipulate data. 
+    var d1 = data.replace(/，/g,',').split('\n');
+    if (d1.length>0) {
+        var tmpAOA = [];
+        var ws_name = d1[0];    // Get first line as the sheet name. 
+
+        // Step 1: Get AOA object.
+        for (var i=1; i<d1.length; i++) 
+            if (d1[i].search(/,/i)>0) 
+                tmpAOA.push(d1[i].split(','));
+
+        // Step 2: Create workbook object and generate file.
+        var ws = XLSX.utils.aoa_to_sheet(tmpAOA);
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws, ws_name);
+        XLSX.writeFile(wb, actualFilePath, { type: 'file' });
+
+        return urlPath;
+    } else {
+        return 'NULL';
+    }
+}
+
+router.post('/file', function(req, res, next){
+    res.type('html');
+    res.send(GenerateFile(req.body.textA));
 });
 
 module.exports = router;

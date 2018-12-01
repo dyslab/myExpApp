@@ -39,4 +39,9 @@ router.get('/section4', function(req, res, next) {
   res.render('section4', { title: apptitle + ' Section 4' });
 });
 
+/* GET Section5 page. */
+router.get('/section5', function(req, res, next) {
+  res.render('section5', { title: apptitle + ' Section 5' });
+});
+
 module.exports = router;
