@@ -1,0 +1,15 @@
+span.spn_title {
+  font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 24px;
+}
+
+span.clk_text {
+  font-family: 'Consolas', 'Lucida Sans Unicode', Courier, 'Courier New', monospace;
+  font-size: 18px;
+}
+
+textarea {
+  border: 1px;
+  border-style : solid;
+  background-color: rgb(235, 255, 244);
+}

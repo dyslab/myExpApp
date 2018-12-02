@@ -1,10 +1,37 @@
 extends layout
 
 block scripts
+  link(rel='stylesheet', href='/stylesheets/section5.css')
   script(src="/javascripts/jquery-3.3.1.min.js")
   script(src="/javascripts/section5.js")
 
 block content
   h3 Welcome to #{title} page
 
-  h3 Text Area 1: Stream reading and writing.
+  h3 Text Area: Timer, Ajax DOM post/get, File stream reading and writing.
+  p
+    table(width="900")
+      tr
+        td
+          span(class="spn_title") Simple Project Notepad
+        td(colspan="2", align="right")
+          span(id="spanClock", class="clk_text")
+          | &nbsp;&nbsp;
+          button(id="toggleInterval", style="width:200px")
+      tr
+        td
+          b To do :
+        td
+          b In progress :
+        td
+          b Done :
+      tr
+        td(width="33%")
+          textarea(id="taTodo", style="width:100%", rows=20)
+        td(width="33%")
+          textarea(id="taInprogress", style="width:100%", rows=20)
+        td
+          textarea(id="taDone", style="width:100%", rows=20)
+      tr
+        td(colspan="3", align="center")
+          div(id="divResponse", hidden)
