@@ -93,6 +93,8 @@ router.get('/:tag/:method', function(req, res, next) {
       });
     }, function(reject) {
       res.send(reject);
+    }).catch(function(err) {
+      console.log(err);
     });
   }
   // Above for test

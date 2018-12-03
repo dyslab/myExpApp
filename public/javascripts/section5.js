@@ -64,6 +64,7 @@ $(document).ready(function(){
     // -----------------------------------------------------------------------------------------
     // Test Promise, Timeout, File stream reading and writing.
     $("#btnTest").click(function(){ 
+        $("#divTest").html("Waiting for response...<br><br>Note: Since the file stream may be jammed on Server side, sometimes you might wait a few seconds before acquiring the response.");
         $.get("/spn/test/test", function(data) {
             $("#divTest").html(data);
         });
