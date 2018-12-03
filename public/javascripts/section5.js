@@ -2,6 +2,7 @@
 $(document).ready(function(){
     var clockIntervalHandler;
 
+    // -----------------------------------------------------------------------------------------
     // Show an interval clock on page.
     function startIntervalClock() {
         var clock = new Date();
@@ -57,6 +58,14 @@ $(document).ready(function(){
     $("#taDone").change(function() {
         $.post("/spn/done/write", { textA: $("#taDone").val() }, function(data) {
             if (data === "ok") showupResult("Done")
+        });
+    });
+
+    // -----------------------------------------------------------------------------------------
+    // Test Promise, Timeout, File stream reading and writing.
+    $("#btnTest").click(function(){ 
+        $.get("/spn/test/test", function(data) {
+            $("#divTest").html(data);
         });
     });
 });
