@@ -4,60 +4,61 @@ block scripts
   script(src="/javascripts/jquery-3.3.1.min.js")
   script(src="/javascripts/RMBconverter.js")
   script(src="/javascripts/section2.js")
-  script
-    | $("document").ready(function(){
-    |   $("#btn1").click(function(){
-    |     $("span").append("span元素后加文本");
-    |     $("#d2").append("<b>&nbsp;对象d2后增加一段文本.&nbsp;</b>");
-    |     $("ol").append("<li>Appended item</li>");
-    |   });
-    | });
 
 block content
   h3 Welcome to #{title} page
 
-  h3 Text Area A: RMB Converter
+  hr
+  h3 Test Area A: RMB Converter and Some Favorite Links.
   input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
   | &nbsp; &nbsp;
   button.rmb(onclick="javascript:doRMBconvert();") 人民币金额转换
   | &nbsp; &nbsp;
   input.s1(type="text", id="strRMB", style="width:500px", value="", onfocus="javascript:this.select();")
 
-  h3 Text Area B: Miscellaneous Test, Favourited links, DIV Dynamic Data etc.
-  p
-    a(href="/helloantv.html") See an awesome graphic chart from AntV
-  p
-    a(href="/helloechart.html") See an awesome graphic chart from ECharts
-  p
-    a(href="/ButtonStylesInspiration.html") See some awesome button effects which were powered by CSS3
-  p
-    div
-      button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
-  
-  br
-  br
-  br
-  br
-  p
-    // applesum参数传递测试
-    case applesnum 
-      when 0
-        div 
-          p 测试参数传递：Sorry, 没有苹果。
-      default
-        div
-          p 测试参数传递：苹果数量 #{applesnum} 个。
-  
-  // 测试Javascript增加内容
-  | 这里有个DIV叫d1。
-  div(id = "d1")
-  br
+  p 
+    table(width="100%", align="left", valign="top")
+      tr
+        td(width="33%", height="40")
+          a.go1(href="/helloantv.html") See an awesome graphic chart from AntV
+        td(width="33%")
+          a.go1(href="/helloechart.html") See an awesome graphic chart from ECharts
+        td
+          a.go1(href="/ButtonStylesInspiration.html") See some awesome button effects
+      tr
+        td(height="40")
+          a.go1(href="/otg240.html") Check out TXT Grabee for XS240
+        td
+        td
+          a.go1(href="http://order.4px.com/order/personal_center/index" target="4PX-Window") Test：Go 4PX in a specific window.
 
-  // 测试JQuery增加内容
-  div
-    span 这是span初始文本。
-    p(id = "d2") 
-      b 这是对象d2初始文本。
-    ol
-      li Initial Item
-  br
+  p
+    hr
+    h3 Test Area B: Miscellaneous Test, Favourited links, DIV Dynamic Data etc.
+    table
+      tr
+        td
+          button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
+      tr
+        td
+          // applesum参数传递测试
+          case applesnum 
+            when 0
+              div 
+                p 测试参数传递：Sorry, 没有苹果。
+            default
+              div
+                p 测试参数传递：苹果数量 #{applesnum} 个。
+        
+          // 测试Javascript增加内容
+          div(id = "d1")
+            | 这里有个DIV叫d1。
+          br
+
+          // 测试JQuery增加内容
+          div
+            span 这是span初始文本。
+            p(id = "d2") 
+              b 这是对象d2初始文本。
+            ol
+              li Initial Item

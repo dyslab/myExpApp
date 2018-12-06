@@ -14,6 +14,7 @@ var excel2antvRouter = require('./routes/excel2antv');
 var uploadRouter = require('./routes/uploadtest');
 var exportRouter = require('./routes/exporttest');
 var spnRouter = require('./routes/spntest');
+var otgRouter = require('./public/otg/server/otg-server');
 
 var app = express();
 
@@ -36,6 +37,7 @@ app.use('/excel2antv',excel2antvRouter);
 app.use('/upload',uploadRouter);
 app.use('/export',exportRouter);
 app.use('/spn',spnRouter);
+app.use('/otg',otgRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

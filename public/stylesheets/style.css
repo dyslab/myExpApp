@@ -2,15 +2,9 @@ body {
   padding: 10px;
   margin-top: 0px;
   margin-left: 0px;
-  font: 1em Cambria, Arial, sans-serif, "Lucida Grande", Helvetica;
+  font: 1em "Cambria", Arial, sans-serif, "Lucida Grande", Helvetica;
 	background: white;
 	color: #37474f;
-}
-
-
-a {
-  color: #00B7FF;
-  font-size: 22px;
 }
 
 a.pagejumping {
@@ -23,16 +17,16 @@ a.pagejumping {
 a.pagejumping:hover {color:#FF3300;text-decoration:underline;}
 
 a.go1 {
-  color: rgb(231, 181, 181);
-  font: 16pt Arial, sans-serif;
+  color: rgb(150, 150, 150);
+  font: 16pt "Cambria", sans-serif;
   font-weight: bold;
-  text-shadow:1px 1px 1px black;
 }
 a.go1:hover {
   color: rgb(252, 206, 39);
   text-shadow:1px 1px 1px black;
 }
 
+/* class "s1" is for input and select */
 .s1 {
   border-width : 2px;
 	border-color : #7986cb;
@@ -41,7 +35,7 @@ a.go1:hover {
 	border-left-width : 2px;
 	border-right-width : 2px;
 	border-top-width : 2px;
-	font-family : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-family : 'Courier New', Courier, monospace;
 	font-size : 14pt;
 	font-weight : bold;
 	height : 40px;
