@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 var XLSX = require('xlsx');
 
-var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
+// var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
+var xlxsfilename = './public/bufferdata/salesdata.xlsx';
 var result = { 'chart_title': 'error_gen' };
 
 function ChartSalesData(name, value) {
