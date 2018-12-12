@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
+// var xlxsfilename = '.\\public\\bufferdata\\salesdata.xlsx';
+var xlxsfilename = './public/bufferdata/salesdata.xlsx';
 var result = { 'chart_title': 'error_gen' };
 
 // Object for AntV HBar and VBar
