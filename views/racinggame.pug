@@ -1,0 +1,33 @@
+extends layout
+
+block scripts
+  script(src="/javascripts/jquery-3.3.1.min.js")
+  script(src="/javascripts/racinggame.js")
+
+block content
+  table(width="95%")
+    tr 
+      td(height="100", colspan="2", align="center")
+        h2 #{title}
+    tr 
+      td(width="100", height="60", align="right")
+        input(type="radio", name="rdBet", value="T1", id="T1") 
+        label(for="T1") &nbsp;Track 1:&nbsp;
+      td(style="background: #F4E9E9; border-top: 1px #000 dotted; border-bottom: 1px #000 dotted")
+        span(id="spTrack")
+    tr
+      td(height="60", align="right")
+        input(type="radio", name="rdBet", value="T2", id="T2")
+        label(for="T2") &nbsp;Track 2:&nbsp;
+      td(style="background: #E9F4E9; border-top: 1px #000 dotted; border-bottom: 1px #000 dotted")
+        span(id="spTrack")
+    tr
+      td(height="60", align="right")
+        input(type="radio", name="rdBet", value="T3", id="T3")
+        label(for="T3") &nbsp;Track 3:&nbsp;
+      td(style="background: #E9E9F4; border-top: 1px #000 dotted; border-bottom: 1px #000 dotted")
+        span(id="spTrack")
+    tr 
+      td(height="120", colspan="2")
+        div(style="display: flex; justify-content: center; -webkit-justify-content: center")
+          button(id="btnStart", class="button button--sacnite button--round-l", style="width: 200px; cursor: pointer") Start Game

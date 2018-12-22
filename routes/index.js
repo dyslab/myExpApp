@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 const apptitle = 'myExpApp';
 
 var trackingLink = '';
@@ -42,6 +43,17 @@ router.get('/section4', function(req, res, next) {
 /* GET Section5 page. */
 router.get('/section5', function(req, res, next) {
   res.render('section5', { title: apptitle + ' Section 5' });
+});
+
+var eventtest = require('./eventtest')
+
+/* GET event emitter test. */
+router.get('/eventtest', function(req, res, next) {
+  eventtest.exportCombinedFilesByEventEmitter(res, [
+    './public/bufferdata/spn-todo.txt',
+    './public/bufferdata/spn-inprogress.txt',
+    './public/bufferdata/spn-done.txt'
+  ], 'event-emitter-output-file.txt')
 });
 
 module.exports = router;

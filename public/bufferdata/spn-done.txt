@@ -3,3 +3,4 @@
 3、此记事本真的可以保存文件哦
 4、Game Over
 5、OTG for xiaoshuo240
+6、完成Event Emitter测试

@@ -15,6 +15,7 @@ var uploadRouter = require('./routes/uploadtest');
 var exportRouter = require('./routes/exporttest');
 var spnRouter = require('./routes/spntest');
 var otgRouter = require('./public/otg/server/otg-server');
+var rgRouter = require('./routes/racinggame-server');
 
 var app = express();
 
@@ -38,6 +39,7 @@ app.use('/upload',uploadRouter);
 app.use('/export',exportRouter);
 app.use('/spn',spnRouter);
 app.use('/otg',otgRouter);
+app.use('/racinggame',rgRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
