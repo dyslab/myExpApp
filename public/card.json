@@ -1,0 +1,22 @@
+{
+    "name": "Vincent Du",
+    "handle": "Programming Hobbyist",
+    "items": [
+      {
+        "label": "Work",
+        "content": "I'm currently working on node.js and looking forward to learning Python."
+      },
+      {
+        "label": "QQ",
+        "content": "120843991"
+      },
+      {
+        "label": "Email",
+        "content": "vincent_to@qq.com"
+      },
+      {
+        "label": "GitHub",
+        "content": "https://github.com/dyslab"
+      }
+    ]
+  }
