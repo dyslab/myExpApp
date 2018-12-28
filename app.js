@@ -19,6 +19,9 @@ var rgRouter = require('./routes/racinggame-server');
 
 var app = express();
 
+// reset the listing port to 8001
+process.env.PORT = 8001
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
