@@ -3,8 +3,9 @@
   "version": "0.1.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
-  },
+    "start": "node ./bin/www",
+    "pm2": "pm2 start ecosystem.config.js"
+},
   "dependencies": {
     "babel-plugin-transform-react-pug": "^6.0.1",
     "canvas": "^2.2.0",
