@@ -20,14 +20,17 @@ html
     block scripts
   body
     // block navigator
-    a.pagejumping(href="/") Go to Index/Router 
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    a.pagejumping(href="/section2") Go to Section 2
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    a.pagejumping(href="/section3") Go to Section 3
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    a.pagejumping(href="/section4") Go to Section 4
-    | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    a.pagejumping(href="/section5") Go to Section 5
+    header
+      img(src="/images/jquery-logo.png", height="18px")
+      | 
+      a.pagejumping(href="/") Index/Sect.1 
+      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.pagejumping(href="/section2") Sect.2
+      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.pagejumping(href="/section3") Sect.3
+      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.pagejumping(href="/section4") Sect.4
+      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.pagejumping(href="/section5") Sect.5
   
     block content

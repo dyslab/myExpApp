@@ -7,12 +7,12 @@ var trackingLink = '';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: apptitle + ' Index/Router page' });
+  res.render('index', { title: apptitle + ' Index/Sect.1 page' });
 });
 
 /* GET Section2 page. */
 router.get('/section2', function(req, res, next) {
-  res.render('section2', { title: apptitle + ' Section 2', applesnum: 10 });
+  res.render('section2', { title: apptitle + ' Sect.2', applesnum: 10 });
 });
 
 /* POST Section2 page. */
@@ -32,17 +32,17 @@ router.post('/section2', function(req, res, next) {
 
 /* GET Section3 page. */
 router.get('/section3', function(req, res, next) {
-  res.render('section3', { title: apptitle + ' Section 3' });
+  res.render('section3', { title: apptitle + ' Sect.3' });
 });
 
 /* GET Section4 page. */
 router.get('/section4', function(req, res, next) {
-  res.render('section4', { title: apptitle + ' Section 4' });
+  res.render('section4', { title: apptitle + ' Sect.4' });
 });
 
 /* GET Section5 page. */
 router.get('/section5', function(req, res, next) {
-  res.render('section5', { title: apptitle + ' Section 5' });
+  res.render('section5', { title: apptitle + ' Sect.5' });
 });
 
 var eventtest = require('./eventtest')
