@@ -10,5 +10,5 @@ My development environment:
 
 - Platform OS: Ubuntu 18.10
 - Coding tool: VS Code
-- Framework: Node.js + Express + JQuery
+- Framework: Node.js + Express + Pug + JQuery
 - VCS and repo. tools: Git / npm
