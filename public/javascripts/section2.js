@@ -8,7 +8,7 @@ function testclick() {
 // 测试JQuery方式增加内容
 $(document).ready(function() {
     $("#btn1").click(function(){
-        $("span").append("#span元素后加文本");
+        $("span.test").append("#span.test元素后加文本");
         $("#d2").append("<b>&nbsp;对象d2后增加文本。&nbsp;</b>");
         $("ol").append("<li>Appended item</li>");
     });

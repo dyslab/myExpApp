@@ -46,6 +46,10 @@ td.t1 {
   box-shadow: 0 1px 3px rgba(0,0,0,0.4), inset 0 0 0 3px white;
 }
 
+hr {
+  border: 1px dotted rgb(194, 214, 253);
+}
+
 iframe {
   border-style : none;
 }
@@ -96,4 +100,8 @@ textarea {
   border: 1px;
   border-style : solid;
   background-color: rgb(252, 251, 199);
+}
+
+.s4-panel {
+  border:1px dashed #A0CAEA;
 }

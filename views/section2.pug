@@ -8,7 +8,6 @@ block scripts
 block content
   h3 Welcome to #{title} page
 
-  hr
   h3 Test Area A: RMB Converter and Some Favorite Links.
   input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
   | &nbsp; &nbsp;
@@ -59,7 +58,7 @@ block content
 
           // 测试JQuery增加内容
           div
-            span 这是span初始文本。
+            span.test 这是span.test初始文本。
             p(id = "d2") 
               b 这是对象d2初始文本。
             ol

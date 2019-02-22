@@ -21,8 +21,6 @@ html
   body
     // block navigator
     header
-      img(src="/images/jquery-logo.png", height="18px")
-      | 
       a.pagejumping(href="/") Index/Sect.1 
       | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section2") Sect.2
@@ -32,5 +30,20 @@ html
       a.pagejumping(href="/section4") Sect.4
       | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section5") Sect.5
+      hr
   
     block content
+
+    footer
+      div(style="height:20px;")
+      div(style="height:20px;")
+        hr
+      div(align="center", valign="center", style="height:60px;")
+        span(style="font-size:1.3rem; color: #99AAFF;") Powered by 
+        img(src="/images/nodejs-logo.png", alt="node.js", height="24px")
+        | 
+        img(src="/images/express-logo.png", alt="express", height="24px")
+        | 
+        img(src="/images/pug-logo.png", alt="pug", height="24px")
+        | 
+        img(src="/images/jquery-logo.png", alt="jQuery", height="24px")
