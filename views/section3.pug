@@ -3,25 +3,21 @@ extends layout
 block content
   h3 Welcome to 
     span.title-color= title
-    |  page
+    |  page. Read Excel file then convert the sheet data to JSON and AntV Chart Samples.
 
-  h3 Test Area: Read Excel file then convert the sheet data to JSON and AntV Chart Samples.
-
-  table(width="800")
+  table(width="800", cellpadding="3px")
     tr 
+      td
+        button(id="btnC", class="button button--isi", style="width: 230px; cursor: pointer") Excel To AntV Chart<br>AntV图表输出<br>&nbsp;
       td
         button(id="btnA", class="button button--isi", style="width: 230px; cursor: pointer") Excel To JSON Object<br>Excel file Generation<br>对象输出与文件生成
       td
         button(id="btnB", class="button button--isi", style="width: 230px; cursor: pointer") Excel To JSON String<br>字符串输出<br>&nbsp;
-      td
-        button(id="btnC", class="button button--isi", style="width: 230px; cursor: pointer") Excel To AntV Chart<br>AntV图表输出<br>&nbsp;
     tr
-      td
-      td
-      td
+      td(colspan="3")
         form(id="formAntV", method="get", target="frameExcelChart", action="/excel2antv")
-          | Chart Type:&nbsp;
-          select(name="antv_type")
+          label(for="antv_type") Chart Type:&nbsp;
+          select#antv_type(name="antv_type")
             option(value="hbar") Horizental Bar Chart
             option(value="vbar") Vertical Bar Chart
             option(value="pie") Pie Chart
@@ -39,3 +35,7 @@ block content
 block footer-scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.0/xlsx.full.min.js")
   script(src="/javascripts/section3.js")
+  script.
+    $(document).ready(function($) {
+      $( "#antv_type" ).selectmenu();
+    });

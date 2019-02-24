@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title= 'App name : ' + title
+    title= title
 
     //- favicon
     link(rel='shortcut icon', href='/favicon.ico' type='image/x-icon')
@@ -24,14 +24,14 @@ html
   body
     //- block navigator
     header
-      a.pagejumping(href="/") Index/Sect.1 
-      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      a.pagejumping(href="/") Index/Sect.1
+      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section2") Sect.2
-      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section3") Sect.3
-      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section4") Sect.4
-      | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       a.pagejumping(href="/section5") Sect.5
       hr
   
@@ -43,15 +43,20 @@ html
         hr
       div(align="center", valign="center", style="height:60px;")
         span(style="font-size:1.3rem; color: #99AAFF;") Powered by 
-        img(src="/images/nodejs-logo.png", alt="node.js", height="24px")
+        a(href="http://nodejs.cn/", target="_blank")
+          img(src="/images/nodejs-logo.png", alt="node.js", title="node.js", height="24px")
         | 
-        img(src="/images/express-logo.png", alt="express", height="24px")
+        a(href="http://expressjs.com.cn/", target="_blank")
+          img(src="/images/express-logo.png", alt="express", title="express", height="24px")
         | 
-        img(src="/images/pug-logo.png", alt="pug", height="24px")
+        a(href="http://pugjs.org/", target="_blank")
+          img(src="/images/pug-logo.png", alt="pug", title="pug", height="24px")
         | 
-        img(src="/images/jquery-logo.png", alt="jQuery", height="24px")
+        a(href="http://jquery.com/", target="_blank")
+          img(src="/images/jquery-logo.png", alt="jQuery", title="jQuery", height="24px")
         | 
-        img(src="/images/jquery-ui-logo.png", alt="jQuery UI", height="24px")
+        a(href="http://jqueryui.com/", target="_blank")
+          img(src="/images/jquery-ui-logo.png", alt="jQuery UI", title="jQuery UI", height="24px")
 
     script(src="/javascripts/jquery-3.3.1.min.js")
     script(src="/javascripts/jquery-ui.min.js")
