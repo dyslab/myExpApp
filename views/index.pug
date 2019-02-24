@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  h3 Welcome to #{title} page, hello everyone!
+  h3 Welcome to 
+    span.title-color= title
+    |  page, hello everyone!
 
   //- QR码、条形码测试。 QRcode, Barcode test.
   div#s1-accordion
@@ -86,6 +88,8 @@ block footer-scripts
   script(src="/javascripts/codeset.js")
   script.
     $(document).ready(function($) {
-      $( "#s1-accordion" ).accordion();
+      $( "#s1-accordion" ).accordion({
+        heightStyle: "content"
+      });
       $( "#comName" ).selectmenu();
     });

@@ -1,9 +1,5 @@
 extends layout
 
-block scripts
-  script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="/javascripts/racinggame.js")
-
 block content
   table(width="95%")
     tr 
@@ -40,3 +36,6 @@ block content
     tr 
       td(height="120", colspan="2", align="center")
         div(id="divResult", align="center")
+
+block footer-scripts
+  script(src="/javascripts/racinggame.js")

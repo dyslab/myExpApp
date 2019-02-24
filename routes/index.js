@@ -7,7 +7,7 @@ var trackingLink = '';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: apptitle + ' Index/Sect.1 page' });
+  res.render('index', { title: apptitle + ' Index/Sect.1' });
 });
 
 /* GET Section2 page. */

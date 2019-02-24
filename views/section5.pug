@@ -4,7 +4,9 @@ block header-scripts
   link(rel='stylesheet', href='/stylesheets/section5.css')
 
 block content
-  h3 Welcome to #{title} page
+  h3 Welcome to 
+    span.title-color= title
+    |  page
 
   h3 Test Area A: Interval Timer, Ajax DOM post/get, File stream reading and writing.
   p

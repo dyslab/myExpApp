@@ -60,6 +60,9 @@ iframe.wb2, canvas.wb2 {
   border-width: 2px;
 }
 
+.title-color {
+  color: rgb(53, 116, 40)
+}
 
 button.qr {
   border: 1px;
@@ -81,6 +84,7 @@ button.bar {
   font-family :  Cambria, Georgia;
   font-weight: bold;
 }
+
 button.rmb {
   border: 1px;
   border-style : solid;

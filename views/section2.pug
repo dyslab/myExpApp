@@ -1,64 +1,68 @@
 extends layout
 
 block content
-  h3 Welcome to #{title} page
+  h3 Welcome to 
+    span.title-color= title
+    |  page
 
-  h3 Test Area A: RMB Converter and Some Favorite Links.
-  input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
-  | &nbsp; &nbsp;
-  button.rmb(onclick="javascript:doRMBconvert();") 人民币金额转换
-  | &nbsp; &nbsp;
-  input.s1(type="text", id="strRMB", style="width:500px", value="", onfocus="javascript:this.select();")
-  p &nbsp;
-  p 
-    table(width="100%", align="left", valign="top")
-      tr
-        td(width="33%", height="40")
-          a.go1(href="/helloantv.html") Awesome graphic chart from AntV
-        td(width="33%")
-          a.go1(href="/helloechart.html") Awesome graphic chart from ECharts
-        td
-          a.go1(href="/ButtonStylesInspiration.html") Awesome button effects
-      tr
-        td(height="40")
-          a.go1(href="/eventtest") Event emitter export file test
-        td
-          a.go1(href="/racinggame") Timer racing gambling game
-          // a.go1(href="/otg240.html") Test: TXT Grabee for XS240
-        td
-          a.go1(href="http://order.4px.com/order/personal_center/index" target="4PX-Window") Test：Go 4PX in another window.
-  p &nbsp;
-  p
-    hr
-    h3 Test Area B: Miscellaneous Test, Favourited links, DIV Dynamic Data etc.
-    table
-      tr
-        td
-          button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
-      tr
-        td
-          // applesum参数传递测试
-          case applesnum 
-            when 0
-              div 
-                p 测试参数传递：Sorry, 没有苹果。
-            default
-              div
-                p 测试参数传递：苹果数量 #{applesnum} 个。
-        
-          // 测试Javascript增加内容
-          div(id = "d1")
-            | 这里有个DIV叫d1。
-          br
-
-          // 测试JQuery增加内容
-          div
-            span.test 这是span.test初始文本。
-            p(id = "d2") 
-              b 这是对象d2初始文本。
-            ol
-              li Initial Item
+  div#s2-accordion
+    h3 RMB Converter
+    div
+      p
+        input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
+        | &nbsp; &nbsp;
+        button.rmb(onclick="javascript:doRMBconvert();") 人民币金额转换
+        | &nbsp; &nbsp;
+        input.s1(type="text", id="strRMB", style="width:500px", value="", onfocus="javascript:this.select();")
+    h3 Dynamic Data Test
+    div
+      button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
+      div
+        //- applesum参数传递测试
+        case applesnum 
+          when 0
+            div 
+              p 测试参数传递：Sorry, 没有苹果。
+          default
+            div
+              p 测试参数传递：苹果数量 #{applesnum} 个。
+        //- 测试Javascript增加内容
+        div(id = "d1")
+          | 这里有个DIV叫d1。
+        br
+        //- 测试JQuery增加内容
+        div
+          span.test 这是span.test初始文本。
+          p(id = "d2") 
+            b 这是对象d2初始文本。
+          ol
+            li Initial Item
+    h3 Sample Links...
+    div
+      p 
+        table(width="100%", align="left", valign="top")
+          tr
+            td(width="33%", height="40")
+              a.go1(href="/helloantv.html") Awesome graphic chart from AntV
+            td(width="33%")
+              a.go1(href="/helloechart.html") Awesome graphic chart from ECharts
+            td
+              a.go1(href="/ButtonStylesInspiration.html") Awesome button effects
+          tr
+            td(height="40")
+              a.go1(href="/eventtest") Event emitter export file test
+            td
+              a.go1(href="/racinggame") Timer racing gambling game
+              //- a.go1(href="/otg240.html") Test: TXT Grabee for XS240
+            td
+              a.go1(href="http://order.4px.com/order/personal_center/index" target="4PX-Window") Test：Go 4PX in another window.
 
 block footer-scripts
   script(src="/javascripts/RMBconverter.js")
   script(src="/javascripts/section2.js")
+  script.
+    $(document).ready(function($) {
+      $( "#s2-accordion" ).accordion({
+        heightStyle: "content"
+      });
+    });
