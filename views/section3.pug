@@ -1,10 +1,5 @@
 extends layout
 
-block scripts
-  script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.0/xlsx.full.min.js")
-  script(src="/javascripts/section3.js")
-
 block content
   h3 Welcome to #{title} page
 
@@ -38,3 +33,7 @@ block content
         button(id="btnGeoB", class="button button--ujarak", style="width: 200px; cursor: pointer") Geo Map Chart Sample 2
       td
         button(id="btnGeoC", class="button button--ujarak", style="width: 200px; cursor: pointer") Geo Map Chart Sample 3
+
+block footer-scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.14.0/xlsx.full.min.js")
+  script(src="/javascripts/section3.js")

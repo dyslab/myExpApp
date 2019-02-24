@@ -1,10 +1,5 @@
 extends layout
 
-block scripts
-  script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="/javascripts/RMBconverter.js")
-  script(src="/javascripts/section2.js")
-
 block content
   h3 Welcome to #{title} page
 
@@ -63,3 +58,7 @@ block content
               b 这是对象d2初始文本。
             ol
               li Initial Item
+
+block footer-scripts
+  script(src="/javascripts/RMBconverter.js")
+  script(src="/javascripts/section2.js")

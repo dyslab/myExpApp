@@ -3,23 +3,26 @@ html
   head
     title= 'App name : ' + title
 
-    // favicon
+    //- favicon
     link(rel='shortcut icon', href='/favicon.ico' type='image/x-icon')
     link(rel='icon', href='/favicon.png', type='image/png')
     link(rel='apple-touch-icon', sizes='180x180', href="/favicon.png")
 
-    // button stylesheets
+    //- button stylesheets
     link(rel='stylesheet', href='/stylesheets/normalize.css')
     link(rel='stylesheet', href='/stylesheets/base.css')
     link(rel='stylesheet', href='/stylesheets/vicons-font.css')
     link(rel='stylesheet', href='/stylesheets/buttons.css')
 
-    // customized for this project.
+    //- jQuety UI CSS
+    link(rel='stylesheet', href='/stylesheets/jquery-ui.min.css')
+
+    //- customized for this project.
     link(rel='stylesheet', href='/stylesheets/style.css')
 
-    block scripts
+    block header-scripts
   body
-    // block navigator
+    //- block navigator
     header
       a.pagejumping(href="/") Index/Sect.1 
       | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,3 +50,9 @@ html
         img(src="/images/pug-logo.png", alt="pug", height="24px")
         | 
         img(src="/images/jquery-logo.png", alt="jQuery", height="24px")
+        | 
+        img(src="/images/jquery-ui-logo.png", alt="jQuery UI", height="24px")
+
+    script(src="/javascripts/jquery-3.3.1.min.js")
+    script(src="/javascripts/jquery-ui.min.js")
+    block footer-scripts

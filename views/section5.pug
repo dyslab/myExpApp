@@ -1,9 +1,7 @@
 extends layout
 
-block scripts
+block header-scripts
   link(rel='stylesheet', href='/stylesheets/section5.css')
-  script(src="/javascripts/jquery-3.3.1.min.js")
-  script(src="/javascripts/section5.js")
 
 block content
   h3 Welcome to #{title} page
@@ -49,3 +47,6 @@ block content
           | Response : 
         td(valign="top")
           div(id="divTest", class="test", style="height:200px") 
+
+block footer-scripts
+  script(src="/javascripts/section5.js")
