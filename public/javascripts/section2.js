@@ -44,8 +44,8 @@ $(document).ready(function() {
                         cmd_str = "";
                         tmp_str = "";
                     } else {
-                        if (cmd_flag) cmd_str = src_char + src_next_char;
-                        else          tmp_str = src_char + src_next_char;
+                        if (cmd_flag) cmd_str += src_char + src_next_char;
+                        else          tmp_str += src_char + src_next_char;
                     }
                     break;
                 case "}":
@@ -54,8 +54,8 @@ $(document).ready(function() {
                     if (src_next_char === "}") {
                         cmd_flag = false;
                     } else {
-                        if (cmd_flag) cmd_str = src_char + src_next_char;
-                        else          tmp_str = src_char + src_next_char;
+                        if (cmd_flag) cmd_str += src_char + src_next_char;
+                        else          tmp_str += src_char + src_next_char;
                     }
                     break;
                 default:
