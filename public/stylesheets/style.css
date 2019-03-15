@@ -109,3 +109,14 @@ textarea {
 .s4-panel {
   border:1px dashed #A0CAEA;
 }
+
+.custom-text {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.custom-caption {
+  color: grey;
+  font-style: italic;
+  font-size: 1rem;
+}

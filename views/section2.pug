@@ -6,6 +6,15 @@ block content
     |  page
 
   div#s2-accordion
+    h3 Simple String Parse Sample
+    div
+        div(style="padding-bottom: 20px;")
+          input#strParseText(type="text", value="{{image}}/images/express-logo.png{{text}}Express Logo{{image}}/images/nodejs-logo.png{{caption}}Node.js Logo" style="width:80vw;")
+        div(style="padding-bottom: 20px;")
+          button#btnParse.ui-button.ui-widget.ui-corner-all 解析字符串语句
+        div(style="padding-bottom: 20px;")
+          div 解析结果：
+          div#strParseResult
     h3 RMB Converter
     div
       p
@@ -61,7 +70,7 @@ block footer-scripts
   script(src="/javascripts/RMBconverter.js")
   script(src="/javascripts/section2.js")
   script.
-    $(document).ready(function($) {
+    $(document).ready(function() {
       $( "#s2-accordion" ).accordion({
         heightStyle: "content"
       });
