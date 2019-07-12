@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "aws-sdk": "^2.405.0",
-    "lodash": "^4.17.14"
+    "lodash": "^4.17.14",
+    "mem": "^5.1.1"
   }
 }
