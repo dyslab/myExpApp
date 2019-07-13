@@ -23,10 +23,11 @@
 	border: none;
 	background: none;
 	color: inherit;
-	vertical-align: middle;
+	/* vertical-align: middle; */
 	position: relative;
 	z-index: 1;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-moz-osx-font-smoothing: grayscale;
 }
 .button:focus {
@@ -860,7 +861,8 @@
 .button--nanuk:hover > span:nth-child(odd),
 .button--nanuk:hover > span:nth-child(even) {
 	-webkit-animation-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-	transition-animation-function: cubic-bezier(0.75, 0, 0.125, 1);
+	animation-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+	/* transition-animation-function: cubic-bezier(0.75, 0, 0.125, 1); */
 }
 @-webkit-keyframes anim-nanuk-1 {
 	0%,
@@ -1047,6 +1049,7 @@
 	width: 100%;
 	height: 100%;
 	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
 	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
