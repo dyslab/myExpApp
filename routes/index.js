@@ -30,7 +30,7 @@ router.get('/section5', function(req, res, next) {
 
 /* POST lottery checking. */
 router.post('/lotto/json', function(req, res, next) {
-  var jsonLink = 'http://f.apiplus.net/ssq.json';
+  var jsonLink = `http://f.apiplus.net/${req.body.lottoname}.json`;
 
   fetch(jsonLink)
     .then(res => res.json())
