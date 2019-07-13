@@ -17,13 +17,12 @@ a.pagejumping {
 a.pagejumping:hover {color:#FF3300;text-decoration:underline;}
 
 a.go1 {
-  color: rgb(116, 146, 172);
-  font: 20px "Cambria", sans-serif;
-  font-weight: bold;
+  color: rgb(77, 167, 240);
+  font: 1.25em "Cambria", sans-serif;
 }
 a.go1:hover {
-  color: rgb(252, 206, 39);
-  text-shadow:1px 1px 1px black;
+  color: rgb(235, 165, 14);
+  text-shadow:1px 1px 1px #CCC;
 }
 
 /* class "s1" is for input and select */
@@ -31,14 +30,14 @@ a.go1:hover {
   border-width : 2px;
 	border-color : #7986cb;
 	border-style : solid;
-	border-bottom-width : 2px;
-	border-left-width : 2px;
-	border-right-width : 2px;
-	border-top-width : 2px;
+	border-bottom-width : 1px;
+	border-left-width : 0px;
+	border-right-width : 0px;
+	border-top-width : 0px;
 	font-family : 'Courier New', Courier, monospace;
 	font-size : 14pt;
 	font-weight : bold;
-	height : 40px;
+	height : 36px;
 }
 
 td.t1 {
@@ -64,40 +63,26 @@ iframe.wb2, canvas.wb2 {
   color: rgb(53, 116, 40)
 }
 
-button.qr {
+button.qr, button.bar, button.rmb {
   border: 1px;
   border-style : solid;
   width : 150px;
-  height: 40px;
+  height: 36px;
   background-color: bisque;
-  font-size : 12pt;
+  font-size : 0.75em;
   font-family :  Cambria, Georgia;
   font-weight: bold;
 }
 button.bar {
-  border: 1px;
-  border-style : solid;
-  width : 150px;
-  height: 40px;
-  background-color: rgb(196, 255, 221);
-  font-size : 12pt;
-  font-family :  Cambria, Georgia;
-  font-weight: bold;
+  background-color: rgb(196, 255, 216);
 }
-
 button.rmb {
-  border: 1px;
-  border-style : solid;
-  width : 180px;
-  height: 42px;
-  background-color: rgb(255, 196, 237);
-  font-size : 12pt;
-  font-family :  Cambria, Georgia;
-  font-weight: bold;
+  background-color: rgb(255, 196, 214);
 }
 button.qr:hover, button.bar:hover, button.rmb:hover {
   cursor: pointer;
-  background-color: aqua;
+  background-color: rgb(65, 122, 0);
+  color: white;
 }
 
 textarea {
@@ -116,7 +101,13 @@ textarea {
 }
 
 .custom-caption {
-  color: grey;
-  font-style: italic;
   font-size: 1rem;
+  font-style: italic;
+  color: grey;
+}
+
+.custom-caption-highlight {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(245, 95, 58)
 }

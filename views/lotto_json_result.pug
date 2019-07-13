@@ -1,0 +1,13 @@
+extends iframe-layout
+
+block content
+  div(style="margin-left: 10px; margin-right: 10px;")
+    ul
+      each objInfo in data
+        -
+          var str = JSON.stringify(objInfo)
+        li= str
+    p 彩票代码： #{code} 
+    p 返回记录数： #{rows} 
+
+    h3 This is Lotto Checking.

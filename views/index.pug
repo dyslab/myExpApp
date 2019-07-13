@@ -1,13 +1,26 @@
 extends layout
 
 block content
-  h3 Welcome to 
-    span.title-color= title
-    |  page, hello everyone!
-
   //- QR码、条形码测试。 QRcode, Barcode test.
   div#s1-accordion
-    h3 QR码测试（Server Side JS + Canvas实现）
+
+    h3 彩票开奖JSON查询示例（Server Side JS + node-fetch实现）
+    div
+      form(action="/lotto/json", target="frameLottoWindow", method="post")
+        table 
+          tr
+            td
+              select#lottoname.s1(name="lottoname")
+                option(value="ssq") 双色彩
+                option(value="dlt") 大乐透
+            td
+              button.button.button--wayra.button--border-thin(type="submit") 彩票查询
+      p
+        iframe.wb2(name="frameLottoWindow", id="frameLottoWindow", width="100%" height="200", marginwidth="0", marginheight="0", hspace="0", vspace="0")
+      p
+        a.go1(href="https://www.opencai.net/apifree/", target="_blank") 开彩网API开放平台(OPENCAI.NET)接口说明
+
+    h3 QR码示例（Server Side JS + Canvas实现）
     div
       //- QRcode test.
       p
@@ -15,7 +28,7 @@ block content
           tr(valign="top")
             td
               form(id="QRform", action="/qr", target="frameQRCode", method="post")
-                input.s1(type="text", name="strQRCode", id="strQRCode", value="I服啦U，😂囧😅", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
+                input.s1(type="text", name="strQRCode", id="strQRCode", value="I💕U", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
                 input(type="hidden", name="bQRSave", id="bQRSave", value="false")
             td
               button.qr(onclick="submitQRcode()") QR Code Output
@@ -27,7 +40,8 @@ block content
             td
               div
                 iframe.wb2(name="frameQRCode", id="frameQRCode", width="180", height="180")
-    h3 条形码测试（Server Side JS + Canvas实现）
+
+    h3 条形码示例（Server Side JS + Canvas实现）
     div
       //- Barcode test.
       p
@@ -35,7 +49,7 @@ block content
           tr(valign="top")
             td
               form(id="Barform", action="/bar", method="post")
-                input.s1(type="text", name="strBarcode", id="strBarcode", value="V1234567890", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
+                input.s1(type="text", name="strBarcode", id="strBarcode", value="WeAreFamily", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
             td
               button.bar(onclick="showBarcode()") Barcode Output
               table
@@ -46,25 +60,7 @@ block content
             td
               div
                 canvas.wb2(id="barcode", width="300", height="160")
-    h3 快递100 JSON接口查询（Server Side JS + JSON数据抓取 + iframe实现）
-    div
-      table(width="640")
-        tr
-          td(width="100%", valign="top")
-            form(id="formTracking", action="/section2", target="frameTrackingWindow", method="post")
-              table
-                tr
-                  td
-                    select#comName.s1(name="comName")
-                      option(value="yuantong") 圆通
-                      option(value="shentong") 申通
-                  td
-                    input.s1(type="text", name="trackingNo", id="trackingNo", value="804480219613791031", onfocus="javascript:this.select();", onchange="javascript:changeCom();")
-                  td
-                    button(class="button button--saqui", style="cursor: pointer", data-text="快递查询" onclick="javascript:document.getElementById('formTracking').submit();") 快递查询
-        tr
-          td.t1(height="300", align="center")
-            iframe(name="frameTrackingWindow", id="frameTrackingWindow", width="100%" height="100%")
+
     h3 17Track查询（Client Side JS嵌入实现）
     div
       table(width="640")
@@ -73,13 +69,31 @@ block content
             table
               tr
                 td
-                  input.s1(type="text", id="YQNum", value="LZ809939891CN", maxlength=50, onfocus="javascript:this.select();")
+                  input.s1#YQNum(type="text", placeholder="请输入单号", maxlength=50, onfocus="javascript:this.select();")
                 td
-                  button(class="button button--tamaya button--border-thick", style="cursor: pointer", data-text="17TRACK" onclick="javascript:do17Track();") 17TRACK
+                  button.button.button--tamaya(style="cursor: pointer", data-text="17TRACK" onclick="javascript:do17Track();") 17TRACK
+              tr
+                td(colspan=2)
+                  input#fc1(type="radio", name="fc", value="0")
+                  label(for="fc1") 自动识别
+                  input#fc2(type="radio", name="fc", value="190208", checked)
+                  label(for="fc2") ＣＮＥ
+                  input#fc3(type="radio", name="fc", value="190094")
+                  label(for="fc3") ４ＰＸ
         tr
           td.t1(align="center")
             div(id="YQContainer", width="100%")
               | 暂无查询内容！
+
+    h3 快递100 iframe方式查询接口
+    div
+      p
+        span 因Kuaidi100原 
+        b JSON查询接口（http://www.kuaidi100.com/query?type=[公司名拼音]&postid=[单号]）
+        span 已经十分不稳定，无法提供有效查询，故此改用iframe方式提供快递查询。
+      p
+        span 注：目前网上不少快递查询网站（包括快递100，快递鸟等）经常无法查询到有效单号，原因不明。因此如要商业使用，建议采用阿里云、华为云等收费查询接口服务。
+      iframe(name="kuaidi100", src="https://www.kuaidi100.com/frame/app/index2.html", width="560", height="400", marginwidth="0", marginheight="0", hspace="0", vspace="0", frameborder="0", scrolling="no")
 
 block footer-scripts
   script(src="/javascripts/JsBarcode.all.min.js")
@@ -91,5 +105,6 @@ block footer-scripts
       $( "#s1-accordion" ).accordion({
         heightStyle: "content"
       });
-      $( "#comName" ).selectmenu();
+      $( "#lottoname" ).selectmenu();
+      $( "input[type='radio']" ).checkboxradio();
     });

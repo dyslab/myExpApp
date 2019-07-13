@@ -1,11 +1,8 @@
 extends layout
 
 block content
-  h3 Welcome to 
-    span.title-color= title
-    |  page
-
   div#s2-accordion
+
     h3 Simple String Parse Sample
     div
         div(style="padding-bottom: 20px;")
@@ -15,37 +12,44 @@ block content
         div(style="padding-bottom: 20px;")
           div 解析结果：
           div#strParseResult
+
     h3 RMB Converter
     div
       p
-        input.s1(type="text", id="numRMB", value="123456789.01", maxlength=20, style="text-align:right", onfocus="javascript:this.select();")
+        input.s1(type="text", id="numRMB", placeholder="请输入金额", maxlength=15, style="text-align:right", onfocus="javascript:this.select();")
         | &nbsp; &nbsp;
-        button.rmb(onclick="javascript:doRMBconvert();") 人民币金额转换
+        button.rmb(onclick="javascript:doRMBconvert();") 转换人民币金额
         | &nbsp; &nbsp;
         input.s1(type="text", id="strRMB", style="width:500px", value="", onfocus="javascript:this.select();")
+
     h3 Dynamic Data Test
     div
-      button(id="btn1", class="button button--wayra button--border-thin button--round-s", style="cursor: pointer", onclick="javascript:testclick();") DIV增加内容
+      div
+        button.ui-button.ui-widget.ui-corner-all#AddTest(onclick="click_add_test();") DIV增加内容测试
+        button.ui-button.ui-widget.ui-corner-all#EmptyTest(title="清空内容")(style="margin-left:1.5em;")
+          span.ui-button-icon.ui-icon.ui-icon-arrowrefresh-1-w
       div
         //- applesum参数传递测试
         case applesnum 
           when 0
-            div 
-              p 测试参数传递：Sorry, 没有苹果。
+            p 测试参数传递：Sorry, 没有苹果。
           default
-            div
-              p 测试参数传递：苹果数量 #{applesnum} 个。
+            p 测试参数传递：苹果数量 #{applesnum} 个。
         //- 测试Javascript增加内容
-        div(id = "d1")
-          | 这里有个DIV叫d1。
-        br
+        p
+          span.custom-caption-highlight DIV位置：
+          div#d1 
         //- 测试JQuery增加内容
-        div
-          span.test 这是span.test初始文本。
-          p(id = "d2") 
-            b 这是对象d2初始文本。
-          ol
-            li Initial Item
+        p
+          span.custom-caption-highlight span.test位置：
+          span.test
+        p
+          span.custom-caption-highlight #d2位置：
+          span#d2
+        p
+          span.custom-caption-highlight &lt;ol&gt;位置：
+          ol.d3
+
     h3 Sample Links...
     div
       p 

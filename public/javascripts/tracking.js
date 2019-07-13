@@ -22,8 +22,8 @@ function do17Track() {
         YQ_ContainerId : "YQContainer",
         //可选，指定查询结果高度，最大为800px，默认为560px。
         YQ_Height:560,
-        //可选，指定运输商，默认为自动识别。
-        YQ_Fc:"0",
+        //可选，指定运输商，默认为自动识别。AUTO: 0; CNE: 190208; 4PX: 190094
+        YQ_Fc:$("[name='fc']").filter(":checked").val(),
         //可选，指定UI语言，默认根据浏览器自动识别。
         YQ_Lang:"en",
         //必须，指定要查询的单号。

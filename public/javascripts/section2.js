@@ -1,16 +1,23 @@
 // 测试传统方式采用Javascript增加内容
-function testclick() {
+function click_add_test() {
     var divA = document.getElementById("d1");
-    
-    divA.innerHTML = divA.innerHTML+'<b>点一下加一句。</b>';
+    divA.innerHTML = divA.innerHTML+'这是onclick()方法添加内容。';
 }
  
 $(document).ready(function() {
     // 测试JQuery方式增加内容
-    $("#btn1").click(function(){
-        $("span.test").append("#span.test元素后加文本");
-        $("#d2").append("<b>&nbsp;对象d2后增加文本。&nbsp;</b>");
-        $("ol").append("<li>Appended item</li>");
+    $("#AddTest").click(function(){
+        $("span.test").append(" span.test元素后加文本 ");
+        $("#d2").append("<b>通过ID查询添加内容。&nbsp;</b>");
+        $("ol.d3").append("<li>Appended item</li>");
+    });
+
+    // 清空内容
+    $("#EmptyTest").click(function(){
+        $("span.test").empty();
+        $("#d1").empty();
+        $("#d2").empty();
+        $("ol.d3").empty();
     });
 
     // 测试解析字符串
