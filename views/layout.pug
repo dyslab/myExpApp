@@ -23,17 +23,7 @@ html
     block header-scripts
   body
     //- block navigator
-    header
-      a.pagejumping(href="/") Index/Sect.1
-      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      a.pagejumping(href="/section2") Sect.2
-      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      a.pagejumping(href="/section3") Sect.3
-      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      a.pagejumping(href="/section4") Sect.4
-      span &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      a.pagejumping(href="/section5") Sect.5
-      hr
+    include layout_top_menu
   
     h3 Welcome to 
       span.title-color= title
@@ -63,4 +53,7 @@ html
 
     script(src="/javascripts/jquery-3.3.1.min.js")
     script(src="/javascripts/jquery-ui.min.js")
+    //- Localization
+    script(src="/i18n/datepicker-zh-CN.js")
+
     block footer-scripts

@@ -20,9 +20,21 @@ block content
             td
               button.button.button--wayra.button--border-thin(type="submit") 彩票查询
       p
-        iframe.wb2(name="frameLottoWindow", id="frameLottoWindow", width="100%" height="200", marginwidth="0", marginheight="0", hspace="0", vspace="0")
+        iframe.wb2(name="frameLottoWindow", id="frameLottoWindow", width="100%" height="250", marginwidth="0", marginheight="0", hspace="0", vspace="0")
       p
         a.go1(href="https://www.opencai.net/apifree/", target="_blank") 开彩网API开放平台(OPENCAI.NET)接口说明
+
+    h3 农历查询JSON查询示例（Server Side JS + node-fetch实现）
+    div
+      table
+        tr
+          td
+            input.s1#datepicker(type="text", placeholder="请点击选择日期")
+          td
+            button.button.button--aylen.button--border-thin#lunarcheck(type="button") 农历查询
+      div#lunarday
+      p
+        a.go1(href="https://www.sojson.com/api/lunar.html", target="_blank") SOJSON.COM 农历查询API接口（接口准备换地址）
 
     h3 QR码示例（Server Side JS + Canvas实现）
     div
@@ -104,11 +116,13 @@ block footer-scripts
   script(src="//www.17track.net/externalcall.js")
   script(src="/javascripts/tracking.js")
   script(src="/javascripts/codeset.js")
+  script(src="/javascripts/lunarcheck.js")
   script.
     $(document).ready(function($) {
       $( "#s1-accordion" ).accordion({
         heightStyle: "content"
       });
       $( "#lottoname" ).selectmenu();
+      $( "#datepicker" ).datepicker( $.datepicker.regional[ "zh-CN" ] );
       $( "input[type='radio']" ).checkboxradio();
     });

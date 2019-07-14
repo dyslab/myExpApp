@@ -37,6 +37,18 @@ router.post('/lotto/json', function(req, res, next) {
     .then(json => res.render('lotto_json_result',json));
 });
 
+/* POST lunar checking. */
+router.post('/lunar/json', function(req, res, next) {
+  var jsonLink = `https://www.sojson.com/open/api/lunar/json.shtml?date=${req.body.date}`;
+
+  fetch(jsonLink)
+    .then(res => res.json())
+    .then(json => {
+      // console.log(json)
+      res.send(json)
+    });
+});
+
 /* GET event emitter test. */
 var eventtest = require('./eventtest')
 router.get('/eventtest', function(req, res, next) {
