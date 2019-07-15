@@ -144,3 +144,18 @@ ul.balllist li {
 .blueball {
   background-color: #00F;
 }
+
+/* for lunar day */
+.lunar-inline-space {
+  margin-right: 1em;
+}
+.lunar-good, .lunar-bad {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.lunar-good {
+  color: #070;
+}
+.lunar-bad {
+  color: #f00;
+}
