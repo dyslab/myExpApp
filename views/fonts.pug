@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title= title
+
+    //- favicon
+    link(rel='shortcut icon', href='/favicon.ico' type='image/x-icon')
+    link(rel='icon', href='/favicon.png', type='image/png')
+    link(rel='apple-touch-icon', sizes='180x180', href="/favicon.png")
+
+    //- button stylesheets
+    link(rel='stylesheet', href='/fonts/fontbase.css')
+    link(rel='stylesheet', href=`/fonts/${fontname}.css`)
+
+    //- jQuety UI CSS
+    link(rel='stylesheet', href='/stylesheets/jquery-ui.min.css')
+  body
+    h1= fontname.toUpperCase()
+
+    div.bd
+      div.main
+        ul.icon_lists.clear
+          each fontitem in fontjson
+            li
+              i.icon(class=fontname)!= fontitem.code
+              div.name= fontitem.name
+              div.code= fontitem.code
+              div.fontclass= fontitem.fontclass
+        div.helps
+          strong 图标字体参考 REFERENCE：
+          br
+          span 字体名称： #{fontname}
+          br
+          span 字体目录： /fonts/#{fontname}/
+          br
+          span 字体CSS： 
+          a(href=`/fonts/${fontname}.css`) /fonts/#{fontname}.css
+          br
+          span= `调用方法： <i class="icon ${fontname}">字体编码</i>  注：字体编码如：&#xe601; &#xe602; ...`
+
+    div.footer
+      a(href="javascript:history.back();") BACK TO LAST PAGE
+
+    script(src="/javascripts/jquery-3.3.1.min.js")
+    script(src="/javascripts/jquery-ui.min.js")

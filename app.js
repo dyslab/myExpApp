@@ -15,6 +15,7 @@ var uploadRouter = require('./routes/uploadtest');
 var exportRouter = require('./routes/exporttest');
 var spnRouter = require('./routes/spntest');
 var rgRouter = require('./routes/racinggame-server');
+var fontsRouter = require('./routes/fonts');
 
 var app = express();
 app.locals.title = 'myExpApp™ ️💯';
@@ -42,6 +43,7 @@ app.use('/upload',uploadRouter);
 app.use('/export',exportRouter);
 app.use('/spn',spnRouter);
 app.use('/racinggame',rgRouter);
+app.use('/fonts',fontsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

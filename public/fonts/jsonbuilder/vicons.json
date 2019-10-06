@@ -1,0 +1,302 @@
+[
+    {
+        "name": ".icon-box",
+        "code": "&#xe600;",
+        "fontclass": ".icon-box"
+    },
+    {
+        "name": ".icon-write",
+        "code": "&#xe601;",
+        "fontclass": ".icon-write"
+    },
+    {
+        "name": ".icon-clock",
+        "code": "&#xe602;",
+        "fontclass": ".icon-clock"
+    },
+    {
+        "name": ".icon-reply",
+        "code": "&#xe603;",
+        "fontclass": ".icon-reply"
+    },
+    {
+        "name": ".icon-reply-all",
+        "code": "&#xe604;",
+        "fontclass": ".icon-reply-all"
+    },
+    {
+        "name": ".icon-forward",
+        "code": "&#xe605;",
+        "fontclass": ".icon-forward"
+    },
+    {
+        "name": ".icon-flag",
+        "code": "&#xe606;",
+        "fontclass": ".icon-flag"
+    },
+    {
+        "name": ".icon-search",
+        "code": "&#xe607;",
+        "fontclass": ".icon-search"
+    },
+    {
+        "name": ".icon-trash",
+        "code": "&#xe608;",
+        "fontclass": ".icon-trash"
+    },
+    {
+        "name": ".icon-envelope",
+        "code": "&#xe609;",
+        "fontclass": ".icon-envelope"
+    },
+    {
+        "name": ".icon-bubble",
+        "code": "&#xe60a;",
+        "fontclass": ".icon-bubble"
+    },
+    {
+        "name": ".icon-bubbles",
+        "code": "&#xe60b;",
+        "fontclass": ".icon-bubbles"
+    },
+    {
+        "name": ".icon-user",
+        "code": "&#xe60c;",
+        "fontclass": ".icon-user"
+    },
+    {
+        "name": ".icon-users",
+        "code": "&#xe60d;",
+        "fontclass": ".icon-users"
+    },
+    {
+        "name": ".icon-cloud",
+        "code": "&#xe60e;",
+        "fontclass": ".icon-cloud"
+    },
+    {
+        "name": ".icon-download",
+        "code": "&#xe60f;",
+        "fontclass": ".icon-download"
+    },
+    {
+        "name": ".icon-upload",
+        "code": "&#xe610;",
+        "fontclass": ".icon-upload"
+    },
+    {
+        "name": ".icon-rain",
+        "code": "&#xe611;",
+        "fontclass": ".icon-rain"
+    },
+    {
+        "name": ".icon-sun",
+        "code": "&#xe612;",
+        "fontclass": ".icon-sun"
+    },
+    {
+        "name": ".icon-moon",
+        "code": "&#xe613;",
+        "fontclass": ".icon-moon"
+    },
+    {
+        "name": ".icon-bell",
+        "code": "&#xe614;",
+        "fontclass": ".icon-bell"
+    },
+    {
+        "name": ".icon-folder",
+        "code": "&#xe615;",
+        "fontclass": ".icon-folder"
+    },
+    {
+        "name": ".icon-pin",
+        "code": "&#xe616;",
+        "fontclass": ".icon-pin"
+    },
+    {
+        "name": ".icon-sound",
+        "code": "&#xe617;",
+        "fontclass": ".icon-sound"
+    },
+    {
+        "name": ".icon-microphone",
+        "code": "&#xe618;",
+        "fontclass": ".icon-microphone"
+    },
+    {
+        "name": ".icon-camera",
+        "code": "&#xe619;",
+        "fontclass": ".icon-camera"
+    },
+    {
+        "name": ".icon-image",
+        "code": "&#xe61a;",
+        "fontclass": ".icon-image"
+    },
+    {
+        "name": ".icon-cog",
+        "code": "&#xe61b;",
+        "fontclass": ".icon-cog"
+    },
+    {
+        "name": ".icon-calendar",
+        "code": "&#xe61c;",
+        "fontclass": ".icon-calendar"
+    },
+    {
+        "name": ".icon-book",
+        "code": "&#xe61d;",
+        "fontclass": ".icon-book"
+    },
+    {
+        "name": ".icon-map-marker",
+        "code": "&#xe61e;",
+        "fontclass": ".icon-map-marker"
+    },
+    {
+        "name": ".icon-store",
+        "code": "&#xe61f;",
+        "fontclass": ".icon-store"
+    },
+    {
+        "name": ".icon-support",
+        "code": "&#xe620;",
+        "fontclass": ".icon-support"
+    },
+    {
+        "name": ".icon-tag",
+        "code": "&#xe621;",
+        "fontclass": ".icon-tag"
+    },
+    {
+        "name": ".icon-heart",
+        "code": "&#xe622;",
+        "fontclass": ".icon-heart"
+    },
+    {
+        "name": ".icon-video-camera",
+        "code": "&#xe623;",
+        "fontclass": ".icon-video-camera"
+    },
+    {
+        "name": ".icon-trophy",
+        "code": "&#xe624;",
+        "fontclass": ".icon-trophy"
+    },
+    {
+        "name": ".icon-cart",
+        "code": "&#xe625;",
+        "fontclass": ".icon-cart"
+    },
+    {
+        "name": ".icon-eye",
+        "code": "&#xe626;",
+        "fontclass": ".icon-eye"
+    },
+    {
+        "name": ".icon-cancel",
+        "code": "&#xe627;",
+        "fontclass": ".icon-cancel"
+    },
+    {
+        "name": ".icon-chart",
+        "code": "&#xe628;",
+        "fontclass": ".icon-chart"
+    },
+    {
+        "name": ".icon-target",
+        "code": "&#xe629;",
+        "fontclass": ".icon-target"
+    },
+    {
+        "name": ".icon-printer",
+        "code": "&#xe62a;",
+        "fontclass": ".icon-printer"
+    },
+    {
+        "name": ".icon-location",
+        "code": "&#xe62b;",
+        "fontclass": ".icon-location"
+    },
+    {
+        "name": ".icon-bookmark",
+        "code": "&#xe62c;",
+        "fontclass": ".icon-bookmark"
+    },
+    {
+        "name": ".icon-monitor",
+        "code": "&#xe62d;",
+        "fontclass": ".icon-monitor"
+    },
+    {
+        "name": ".icon-cross",
+        "code": "&#xe62e;",
+        "fontclass": ".icon-cross"
+    },
+    {
+        "name": ".icon-plus",
+        "code": "&#xe62f;",
+        "fontclass": ".icon-plus"
+    },
+    {
+        "name": ".icon-left",
+        "code": "&#xe630;",
+        "fontclass": ".icon-left"
+    },
+    {
+        "name": ".icon-up",
+        "code": "&#xe631;",
+        "fontclass": ".icon-up"
+    },
+    {
+        "name": ".icon-browser",
+        "code": "&#xe632;",
+        "fontclass": ".icon-browser"
+    },
+    {
+        "name": ".icon-windows",
+        "code": "&#xe633;",
+        "fontclass": ".icon-windows"
+    },
+    {
+        "name": ".icon-switch",
+        "code": "&#xe634;",
+        "fontclass": ".icon-switch"
+    },
+    {
+        "name": ".icon-dashboard",
+        "code": "&#xe635;",
+        "fontclass": ".icon-dashboard"
+    },
+    {
+        "name": ".icon-play",
+        "code": "&#xe636;",
+        "fontclass": ".icon-play"
+    },
+    {
+        "name": ".icon-fast-forward",
+        "code": "&#xe637;",
+        "fontclass": ".icon-fast-forward"
+    },
+    {
+        "name": ".icon-next",
+        "code": "&#xe638;",
+        "fontclass": ".icon-next"
+    },
+    {
+        "name": ".icon-refresh",
+        "code": "&#xe639;",
+        "fontclass": ".icon-refresh"
+    },
+    {
+        "name": ".icon-film",
+        "code": "&#xe63a;",
+        "fontclass": ".icon-film"
+    },
+    {
+        "name": ".icon-home",
+        "code": "&#xe63b;",
+        "fontclass": ".icon-home"
+    }
+]

@@ -1,0 +1,10 @@
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src: url("../fonts/codropsicons/codropsicons.eot");
+	src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+}
+
+
+.codropsicons { font-family: 'codropsicons'; font-size: inherit; font-weight: normal; font-style: normal; line-height: inherit; position: relative; display: inline-block; transform: translate(0, 0); vertical-align: middle; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
