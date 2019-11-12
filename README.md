@@ -2,13 +2,13 @@
 
 This is my first shot for learning Node.js framework. It's a demostration for testing Node.js, Express, Pug template phaser and some awesome package came from npm and somewhere on internet.
 
-22-11-2018
+22 Nov 2018
 
-__Note__: Since this application imported a module "node-canvas"(https://github.com/Automattic/node-canvas). Its library files might vary from the different OS system with regards to your development environment. So you might rebuild the node-canvas by `npm install canvas --save` on your own OS system firstly if you cannot build this package suceessfully when you want to have a test.
+__Note__: Since this application imported a module "node-canvas"(https://github.com/Automattic/node-canvas). Its library files vary from the different OS system with regards to your development environment. So you might rebuild the node-canvas with **node-pre-gyp** by `npm install canvas --save` on your own OS system firstly if you cannot build this package suceessfully when you want to have a test.
 
 My development environment:
 
-- Platform OS: Ubuntu 18.10
+- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11
 - Coding tool: VS Code
 - Framework: Node.js + Express + Pug + JQuery
 - VCS and repo. tools: Git / npm
