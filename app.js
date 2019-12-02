@@ -16,6 +16,7 @@ var exportRouter = require('./routes/exporttest');
 var spnRouter = require('./routes/spntest');
 var rgRouter = require('./routes/racinggame-server');
 var fontsRouter = require('./routes/fonts');
+var emojiRouter = require('./routes/emoji');
 
 var app = express();
 app.locals.title = 'myExpApp™ ️💯';
@@ -37,13 +38,14 @@ app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 app.use('/qr', qrRouter);
 app.use('/bar', barRouter);
-app.use('/excel',excelRouter);
-app.use('/excel2antv',excel2antvRouter);
-app.use('/upload',uploadRouter);
-app.use('/export',exportRouter);
-app.use('/spn',spnRouter);
-app.use('/racinggame',rgRouter);
-app.use('/fonts',fontsRouter);
+app.use('/excel', excelRouter);
+app.use('/excel2antv', excel2antvRouter);
+app.use('/upload', uploadRouter);
+app.use('/export', exportRouter);
+app.use('/spn', spnRouter);
+app.use('/racinggame', rgRouter);
+app.use('/fonts', fontsRouter);
+app.use('/emoji', emojiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
