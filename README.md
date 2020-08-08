@@ -8,7 +8,7 @@ Since this application imported a module [node-canvas](https://github.com/Automa
 
 __Development environment__:
 
-- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11 ~ 20 Beta
+- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11 ~ 20
 
 - Coding tool: VS Code
 
