@@ -28,7 +28,7 @@
     "xlsx": "^0.17.0"
   },
   "devDependencies": {
-    "aws-sdk": "^2.570.0",
+    "aws-sdk": "^2.1531.0",
     "lodash": "^4.17.21",
     "mem": "^5.1.1"
   }
