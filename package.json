@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-react-pug": "^6.0.1",
-    "canvas": "^2.6.1",
+    "canvas": "^2.11.2",
     "canvasutil": "0.0.4",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",
