@@ -4,7 +4,7 @@ block content
   //- QR码、条形码测试。 QRcode, Barcode test.
   div#s1-accordion
 
-    h3 彩票开奖JSON查询示例（Server Side JS + node-fetch实现）
+    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lotto_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 彩票开奖JSON查询示例（Server Side JS + node-fetch实现）
     div
       form(action="/lotto/json", target="frameLottoWindow", method="post")
         table 
@@ -21,10 +21,8 @@ block content
               button.button.button--wayra.button--border-thin(type="submit") 彩票查询
       p
         iframe.wb2(name="frameLottoWindow", id="frameLottoWindow", width="100%" height="250", marginwidth="0", marginheight="0", hspace="0", vspace="0")
-      p
-        a.go1(href="https://www.opencai.net/apifree/", target="_blank") 开彩网API开放平台(OPENCAI.NET)接口说明
 
-    h3 农历JSON查询示例（Server Side JS + node-fetch实现）
+    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lunar_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 农历JSON查询示例（Server Side JS + node-fetch实现）
     div
       table
         tr
@@ -34,7 +32,7 @@ block content
             button.button.button--aylen.button--border-thin#lunarcheck(type="button") 农历查询
       div#lunarday
       p
-        a.go1(href="https://www.sojson.com/api/lunar.html", target="_blank") SOJSON.COM 农历查询API接口（接口准备换地址）
+        a.go1(href="https://www.sojson.com/api/lunar.html", target="_blank") SOJSON.COM 农历查询API接口（已停用）
 
     h3 QR码示例（Server Side JS + Canvas实现）
     div
@@ -118,11 +116,25 @@ block footer-scripts
   script(src="/javascripts/codeset.js")
   script(src="/javascripts/lunarcheck.js")
   script.
+    function FormatNow() {
+      var date = new Date();
+      
+      var Y = date.getFullYear() + '-';
+      var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1):date.getMonth()+1) + '-';
+      var D = (date.getDate()< 10 ? '0'+date.getDate():date.getDate())+ ' ';
+      var h = (date.getHours() < 10 ? '0'+date.getHours():date.getHours())+ ':';
+      var m = (date.getMinutes() < 10 ? '0'+date.getMinutes():date.getMinutes()) + ':';
+      var s = date.getSeconds() < 10 ? '0'+date.getSeconds():date.getSeconds();
+
+      return Y+M+D; // Y+M+D+h+m+s;
+    }
+  
     $(document).ready(function($) {
       $( "#s1-accordion" ).accordion({
         heightStyle: "content"
       });
       $( "#lottoname" ).selectmenu();
       $( "#datepicker" ).datepicker( $.datepicker.regional[ "zh-CN" ] );
+      $( "input#datepicker" ).val(FormatNow());
       $( "input[type='radio']" ).checkboxradio();
     });

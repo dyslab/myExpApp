@@ -30,7 +30,9 @@ router.get('/section5', function(req, res, next) {
 
 /* POST lottery checking. */
 router.post('/lotto/json', function(req, res, next) {
-  var jsonLink = `http://f.apiplus.net/${req.body.lottoname}.json`;
+  /* The JSON API of below website was suspended, and replaced by local lotto json sample data. */
+  // var jsonLink = `http://f.apiplus.net/${req.body.lottoname}.json`;
+  var jsonLink = `http://localhost:8001/bufferdata/lotto_sample.json`;
 
   fetch(jsonLink)
     .then(res => res.json())
@@ -39,7 +41,9 @@ router.post('/lotto/json', function(req, res, next) {
 
 /* POST lunar checking. */
 router.post('/lunar/json', function(req, res, next) {
-  var jsonLink = `https://www.sojson.com/open/api/lunar/json.shtml?date=${req.body.date}`;
+  /* The JSON API of below website was suspended, and replaced by local lunar json sample data. */
+  // var jsonLink = `https://www.sojson.com/open/api/lunar/json.shtml?date=${req.body.date}`;
+  var jsonLink = `http://localhost:8001/bufferdata/lunar_sample.json`;
 
   fetch(jsonLink)
     .then(res => res.json())

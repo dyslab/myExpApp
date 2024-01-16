@@ -63,4 +63,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// Display web server information
+console.log('%s web server [http://localhost:%d] is listening ...\n', app.locals.title, process.env.PORT)
+
 module.exports = app;

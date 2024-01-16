@@ -1,0 +1,32 @@
+{
+    "status": 200,
+    "message": "success",
+    "data": {
+        "year": 2017,
+        "month": 2,
+        "day": 2,
+        "lunarYear": 2017,
+        "lunarMonth": 1,
+        "lunarDay": 6,
+        "cnyear": "贰零壹柒 ",
+        "cnmonth": "正",
+        "cnday": "初六",
+        "hyear": "丁酉",
+        "cyclicalYear": "丙申",
+        "cyclicalMonth": "辛丑",
+        "cyclicalDay": "庚申",
+        "suit": "纳采,订盟,祭祀,求嗣,出火,塑绘,裁衣,会亲友,入学,拆卸,扫舍,造仓,挂匾,掘井,开池,结网,栽种,纳畜,破土,修坟,立碑,安葬,入殓",
+        "taboo": "祈福,嫁娶,造庙,安床,谢土",
+        "animal": "鸡",
+        "week": "星期四",
+        "festivalList": [],
+        "jieqi": {
+            "4": "立春",
+            "19": "雨水"
+        },
+        "maxDayInMonth": 29,
+        "leap": false,
+        "bigMonth": false,
+        "lunarYearString": "丁酉"
+    }
+}

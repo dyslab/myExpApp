@@ -1,5 +1,7 @@
 ## MyExpApp = _My Experimental Apps for node.js_
 
+![myExpApp Badge](./public/images/app-badge.svg)
+
 This is my first shot for learning Node.js framework. It's a demostration for testing Node.js, Express, Pug template phaser and some awesome package came from npm and somewhere on internet.
 
 Running this demo by CLI `npm start` or [PM2](https://pm2.keymetrics.io/) configured script `npm run pm2` in terminal/bash window, then input the link `http://localhost:8001/` on browser.
@@ -28,7 +30,7 @@ cnpm start # or npm start
 
 __Development environment__:
 
-- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11 ~ 20
+- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11 ~ 20.9
 
 - Coding tool: VS Code
 
