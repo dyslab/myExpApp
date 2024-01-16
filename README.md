@@ -2,6 +2,8 @@
 
 ![myExpApp Badge](./public/images/app-badge.svg)
 
+_`Initilized on 22 Nov 2018 & Last Modified on 17 Jan 2024.`_
+
 This is my first shot for learning Node.js framework. It's a demostration for testing Node.js, Express, Pug template phaser and some awesome package came from npm and somewhere on internet.
 
 Running this demo by CLI `npm start` or [PM2](https://pm2.keymetrics.io/) configured script `npm run pm2` in terminal/bash window, then input the link `http://localhost:8001/` on browser.
@@ -36,10 +38,4 @@ __Development environment__:
 
 - Experimental Framework: Node.js + Express + Pug + JQuery
 
-- VCS and repo.: Git / Github
-
-__Timestamp__:
-
-- _Created on 22 Nov 2018_
-
-- _Last Edited on 09 July 2020_
+- VCS / repository: git / Github

@@ -3,11 +3,12 @@ $(document).ready(function () {
         var nexttr = Math.floor(Math.random() * 1000)
         setTimeout(() => {
             $.get('/racinggame/racing', (data) => {
+                //
                 var tno = Math.floor(Math.random() * 4)
                 $('span#spTrack:eq(' + tno + ')').append(data)
                 var cw = $('span#spTrack:eq(' + tno + ')').width()
                 var pw = $('span#spTrack:eq(' + tno + ')').parent().width()
-                if (cw + 30 >= pw) stop(tno)
+                if (cw + 20 >= pw) stop(tno)
                 else racing()
             })
         }, nexttr)
@@ -19,10 +20,10 @@ $(document).ready(function () {
                 + $("input[name=rdBet]:radio:eq(" + winner + ")").val() 
                 + '. You bet on ' + $("input[name=rdBet]:radio:checked").val()
         if ($("input[name=rdBet]:radio:eq(" + winner + ")").val() === $("input[name=rdBet]:radio:checked").val()) {
-            msg += '\n\nYou won.'
+            msg += '\n\nYON WIN!'
             result = 'win'
         } else {
-            msg += '\n\nYou lost.'
+            msg += '\n\nYOU LOSE!'
             result = 'lose'
         }
 

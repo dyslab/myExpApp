@@ -14,9 +14,10 @@ function constructFilename(no) {
 // Interval writing random file with random number
 function startIntervalWritingFile() {
   return setInterval(() => {
+    let content_series = ['🐎','🐎🐎','🐎🐎🐎'];
     let fno = Math.floor(Math.random() * 3 + 1)
-    let rc = Math.round(Math.random() * 100)
-    fs.writeFile(constructFilename(fno), rc, (err) => {
+    let randomseed = Math.floor(Math.random() * 3)
+    fs.writeFile(constructFilename(fno), content_series[randomseed], (err) => {
       if (err) console.log(err)
     })
     countInterval ++;
@@ -31,7 +32,7 @@ function startIntervalWritingFile() {
 function readRandomFile() {
   let fno = Math.floor(Math.random() * 3 + 1)
 
-  return fno + '#' + fs.readFileSync(constructFilename(fno)) + '$'
+  return fs.readFileSync(constructFilename(fno))
 }
 
 // Return result
