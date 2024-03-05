@@ -64,6 +64,6 @@ app.use(function(err, req, res, next) {
 });
 
 // Display web server information
-console.log('%s web server [http://localhost:%d] is listening ...\n', app.locals.title, process.env.PORT)
+console.log('\x1b[33;1m%s\x1b[0m Web Server is listening on \x1b[32;1mhttp://localhost:%d\x1b[0m...\n', app.locals.title, process.env.PORT)
 
 module.exports = app;
