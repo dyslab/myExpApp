@@ -7,6 +7,32 @@ body {
 	color: #37474f;
 }
 
+header {
+  margin: 1.5rem 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  z-index: 1
+}
+
+header h2 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+  z-index: 1
+}
+
+footer {
+  margin: 1.5rem 2rem;
+}
+
 a.pagejumping {
   text-decoration:none;
   text-shadow:1px 1px 2px darkgray;

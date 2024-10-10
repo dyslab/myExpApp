@@ -1,36 +1,32 @@
 {
   "name": "myexpapp",
-  "version": "0.1.11",
-  "private": true,
+  "version": "0.1.12",
+  "private": false,
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "pm2": "pm2 start ecosystem.config.js",
+    "version:minor": "npm version minor --no-commit-hooks --no-git-tag-version",
     "version:patch": "npm version patch --no-commit-hooks --no-git-tag-version"
   },
   "dependencies": {
-    "babel-plugin-transform-react-pug": "^6.0.1",
+    "babel-plugin-transform-react-pug": "^7.0.1",
     "canvas": "^2.11.2",
     "canvasutil": "0.0.4",
-    "cookie-parser": "^1.4.4",
-    "debug": "^2.6.9",
-    "echarts": "^5.4.3",
-    "encoding": "^0.1.12",
-    "express": "^4.19.2",
-    "htmlparser2": "^3.10.1",
-    "http-errors": "^1.6.3",
-    "jsbarcode": "^3.11.0",
-    "morgan": "^1.9.1",
-    "multer": "^1.4.2",
-    "node-fetch": "^2.6.7",
-    "node-pre-gyp": "^0.12.0",
+    "cookie-parser": "^1.4.7",
+    "debug": "^4.3.7",
+    "echarts": "^5.5.1",
+    "encoding": "^0.1.13",
+    "express": "^4.21.1",
+    "htmlparser2": "^9.1.0",
+    "http-errors": "^2.0.0",
+    "jsbarcode": "^3.11.6",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^2.7.0",
     "pkg-config": "^1.1.1",
-    "pug": "^3.0.1",
-    "qrcode": "^1.4.4",
-    "xlsx": "^0.17.0"
-  },
-  "devDependencies": {
-    "aws-sdk": "^2.1531.0",
-    "lodash": "^4.17.21",
-    "mem": "^5.1.1"
+    "pug": "^3.0.3",
+    "qrcode": "^1.5.4",
+    "xlsx": "^0.18.5"
   }
 }

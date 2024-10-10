@@ -1,14 +1,29 @@
-## MyExpApp = _My Experimental Apps for node.js_
+# MyExpApp = _My Experimental Apps for node.js_
 
 ![myExpApp Badge](./public/images/app-badge.svg)
 
-_`Initilized on 22 Nov 2018 & Last Modified on 17 Jan 2024.`_
+My initial attempt to learn the Node.js framework, serving as both a demonstration and a memorization tool for my journey with Node.js, Express, Pug, and other exciting technologies.
 
-This is my first shot for learning Node.js framework. It's a demostration for testing Node.js, Express, Pug template phaser and some awesome package came from npm and somewhere on internet.
+## Getting Started
 
-Running this demo by CLI `npm start` or [PM2](https://pm2.keymetrics.io/) configured script `npm run pm2` in terminal/bash window, then input the link `http://localhost:8001/` on browser.
+```bash
+npm start
 
-__Compiling Notes__: 
+npm run dev     # For development, Install nodemon via 'npm install nodemon -g' first
+
+npm run pm2     # Install PM2 via 'npm install pm2 -g' first
+
+# Then, open link 'http://localhost:8001/' in browser window
+```
+
+> NOTES 💬
+>
+> - [PM2](https://pm2.keymetrics.io/): Advanced, production process manager for Node.JS. PM2 is a daemon process manager that will help you manage and keep your application online 24/7.
+>
+> - [nodemon](https://nodemon.io/): Monitor for any changes in your source and automatically restart your server. Perfect for development.
+>
+
+## Important Notes About Installation
 
 Since this application imported a module [node-canvas](https://github.com/Automattic/node-canvas). Its library files vary from the different OS system with regards to your development environment. So you might rebuild the node-canvas with **node-pre-gyp** by `npm install canvas --save` on your own OS system firstly. If you cannot compile this package successfully, please check out [compiling section](https://www.npmjs.com/package/canvas#compiling) on this page.
 
@@ -30,12 +45,20 @@ cnpm start # or npm start
 # Good luck
 ```
 
-__Development environment__:
+## Development Environment
 
-- Platform OS: Ubuntu 18.10 ~ 19.10 / Deepin 15.11 ~ 20.9
+- **OS Platform**: Deepin OS v15.11 ~ v23
 
-- Coding tool: VS Code
+- **Coding tool**: VS Code
 
-- Experimental Framework: Node.js + Express + Pug + JQuery
+- **Experimental Framework**: Node.js + Express + Pug + JQuery
 
-- VCS / repository: git / Github
+- **VCS / Remote Repository**: git / Github
+
+## Changelog
+
+- Last Modified Date: 11 Oct 2024
+
+- Initilized Date: 22 Nov 2018
+
+🔹🔹🔹 🏁🏁🏁 🔹🔹🔹 🏁🏁🏁 🔹🔹🔹 🏁🏁🏁 🔹🔹🔹

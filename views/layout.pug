@@ -25,15 +25,16 @@ html
     //- block navigator
     include layout_top_menu
   
-    h3 Welcome to 
-      span.title-color= title
-      span , Hello Guys!
+    header
+      h1= section
+      h2 Welcome to 
+        span.title-color= title
+        span , Hello Guys!
+
     block content
 
+    hr
     footer
-      div(style="height:20px;")
-      div(style="height:20px;")
-        hr
       div(align="center", valign="center", style="height:60px;")
         span(style="font-size:1.3rem; color: #99AAFF;") Powered by 
         a(href="http://nodejs.cn/", target="_blank")

@@ -5,27 +5,27 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: `${req.app.locals.title} Index/Sect.1` });
+  res.render('index', { title: req.app.locals.title, section: 'Index/Sect.1' });
 });
 
 /* GET Section2 page. */
 router.get('/section2', function(req, res, next) {
-  res.render('section2', { title: req.app.locals.title + ' Sect.2', applesnum: 10 });
+  res.render('section2', { title: req.app.locals.title, section: 'Sect.2', applesnum: 10 });
 });
 
 /* GET Section3 page. */
 router.get('/section3', function(req, res, next) {
-  res.render('section3', { title: req.app.locals.title + ' Sect.3' });
+  res.render('section3', { title: req.app.locals.title, section: 'Sect.3' });
 });
 
 /* GET Section4 page. */
 router.get('/section4', function(req, res, next) {
-  res.render('section4', { title: req.app.locals.title + ' Sect.4' });
+  res.render('section4', { title: req.app.locals.title, section: 'Sect.4' });
 });
 
 /* GET Section5 page. */
 router.get('/section5', function(req, res, next) {
-  res.render('section5', { title: req.app.locals.title + ' Sect.5' });
+  res.render('section5', { title: req.app.locals.title, section: 'Sect.5' });
 });
 
 /* POST lottery checking. */
