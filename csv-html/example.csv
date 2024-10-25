@@ -1,0 +1,5 @@
+name,int,float,string
+bob,2,9.5," Bob is a pet, Jack is its master"
+中文 测试,15,11.22,Chinese only 仅显示中文 text
+example,101,201.873,An example for parsing csv file
+digit,9900,1234.56,"""1234.56"""
