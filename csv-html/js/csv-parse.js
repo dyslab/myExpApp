@@ -1,3 +1,14 @@
+function cssAnimate(element, animateClass, ms=2000) {
+  try {
+    element.classList.add(animateClass);
+    setTimeout(() => {
+      element.classList.remove(animateClass);
+    }, ms);
+  } catch(err) {
+    console.log(err);
+  }
+}
+
 function toUrlBase64Data() {
   // 获取文件上传控件的选中文件列表
   const selectedfile = document.getElementById("fileInput").files;
@@ -48,17 +59,6 @@ async function getJsonFromXlsxBySheetJS(file) {
   }
 }
 
-function cssAnimateFlash(element) {
-  try {
-    element.classList.add('ani-flash');
-    setTimeout(() => {
-      element.classList.remove('ani-flash');
-    }, 2000);
-  } catch(err) {
-    console.log(err);
-  }
-}
-
 async function readXlsxOrCsv() {
   // 获取文件上传控件的选中文件列表
   const elFilePicker = document.getElementById("fileInput");
@@ -71,7 +71,7 @@ async function readXlsxOrCsv() {
     elText.innerText = '';
     (await getJsonFromXlsxBySheetJS(sheetFile)).forEach(r => elText.innerText += `${r}\n`);
   } else {
-    cssAnimateFlash(elFilePicker);
+    cssAnimate(elFilePicker, 'ani-blink');
   }
 }
 
@@ -151,6 +151,6 @@ async function processOutputTextFile() {
       }, 3000);
     }
   } else {
-    cssAnimateFlash(elFilePicker);
+    cssAnimate(elFilePicker, 'ani-blink');
   }
 }

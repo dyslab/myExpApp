@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f3f3;
+  --scrollbar-width: calc(100vw - 100%);
+}
+
+/* Apply to specific input type */
+input[type=file]::file-selector-button {
+  background-color: #94ffef;
+  font-size: 1.15rem;
+  margin: 0.25rem 1rem 0rem 0rem;
+  cursor: crosshair;
+}
+input[type=file] {
+  width: calc(100vw - var(--scrollbar-width)); 
+  font-size: 1.15rem;
+  color: grey;
+  cursor: crosshair;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.4rem;
+  /*
+  border: 0;
+  border-bottom: 2px;
+  border-style: dotted;
+  */
+}
+
+button {
+  background-color: #f6ff94;
+  font-size: 1.15rem;
+  margin: 0.25rem 1rem 0rem 0rem;
+  cursor: pointer;
+}
+
+a {
+  text-decoration-style: dotted;
+  text-underline-offset: 0.4rem;
+  text-decoration-line: none;
+}
+
+a:hover {
+  text-decoration-line: underline;
+}
+
+div {
+  margin: 10px;
+  padding: 10px;
+}
+
+footer {
+  position: relative;
+  margin: 1rem 0 0 0;
+  padding: 3rem 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* background-color: rgb(190, 218, 254); */
+  color: rgb(128, 128, 128);
+  text-align: center;
+}

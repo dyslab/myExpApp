@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>
+      An example to parse CSV file by PapaParse on browser side
+    </title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/csv-papaparse.css">
+  </head>
+  <body>
+    <div>
+      <h1 style="text-align: center;">
+        An example to parse CSV file by <span class="papa-highlight">PapaParse</span> on browser side
+      </h1>  
+    </div>
+    <div>
+      <!-- 文件（选择）输入框，绑定 onchange 事件 -->
+      <input
+      id="fileInput"
+      type="file"
+      accept="text/csv"
+      onchange="showCsvFile();" 
+      />
+    </div>
+    <div>
+      <!-- 此处用于显示文件内容 -->
+      <textarea class="papa-textarea-wrapper" id="text" readonly></textarea>
+    </div>
+    <div>
+      <button type="button" id="process" onclick="processOutputTextFile();">Process output TXT file</button>
+    </div>
+    <footer>
+      Copyright &copy; 2024 DysLab. MIT License.
+    </footer>
+    <script src="./js/papaparse.min.js"></script>
+    <script src="./js/csv-papaparse.js"></script>
+  </body>
+</html>
