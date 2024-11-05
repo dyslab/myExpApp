@@ -9,8 +9,7 @@ block content
     - var strReturn = "\r\n";
     textarea(id="textA", name="textA", cols="100", rows="10") #{chart_title}#{strReturn}
       each obj in chart_data 
-        | #{obj.aname},
-        | #{obj.avalue}#{strReturn}
+        | #{obj.aname}, #{obj.avalue}#{strReturn}
   p Test Generate Excel File:&nbsp;&nbsp;
     a(href="#", id="btnGenFileLink", style="font-size:12pt") Click Here to generate a Excel file link for download
     div(id="divLink", hidden)

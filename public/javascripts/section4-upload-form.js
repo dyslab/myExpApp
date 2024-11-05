@@ -2,7 +2,7 @@
 $(document).ready(function(){
     // set the limited maximun size and ext filename of upload file here (size unit: MB)
     var nLimitedSize = 2;
-    var sLimitedExtName = "PNG/JPG/JPEG/XLS/XLSX/JSON";  // must be uppercase.
+    var sLimitedExtName = "PNG / JPEG / CSV / XLSX";  // must be uppercase.
 
     $("#limitedextnameLabel").html("<I>" + sLimitedExtName + "</I>");
     $("#limitedsizeLabel").html("<B>" + nLimitedSize + "MB</B>");
@@ -35,11 +35,11 @@ $(document).ready(function(){
                 break;
             case -2:
                 // extended filename is illegal.
-                window.alert("温馨提示：必须上传格式为"+sLimitedExtName+"的文件。");
+                window.alert("温馨提示：必须上传格式为 "+sLimitedExtName+" 的文件。");
                 break;
             case -3:
                 // over the limited size.
-                window.alert("温馨提示：上传文件不能大于"+nLimitedSize+"M。");
+                window.alert("温馨提示：上传文件不能大于 "+nLimitedSize+"M。");
                 break;
             default:
                 break;

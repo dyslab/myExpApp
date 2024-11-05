@@ -7,11 +7,11 @@ block scripts
 block content
   form(action="/upload/handle", name="uploadForm", method="post", enctype="multipart/form-data")
     input(type="file", name="srcFile", id="srcFile", style="width:85%")
-    p 注：上传文件仅限
+    p 注：上传文件仅限&nbsp;
       span(id="limitedextnameLabel")
-      | 格式，大小限制在
+      | &nbsp;格式，大小限制在&nbsp;
       span(id="limitedsizeLabel")
-      | 以内。
+      | &nbsp;以内。
     p
       div(style="width:95%", align="right")
         input(type="submit", value="开始上传文件", style="cursor:pointer; width:180px; height:50px; background:#456590; color:#EEEEEE; font-size:14pt")

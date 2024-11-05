@@ -31,7 +31,8 @@ router.get('/', function(req, res, next){
         // Chart Datas: Get the cell values from "A1","B1".... in Sheet "Data"
         var csdArray = new Array(new ChartSalesData());
         ws = wb.Sheets['Data'];
-        console.log(ws['!ref']);
+        // console.log(ws['!ref']); // Debug: show data range in the sheet.
+        var tmp = new ChartSalesData();
 
         for (var i=0; i<=rowcount; i++) {
             cell1 = ws['A' + String(i+1)];
@@ -42,19 +43,18 @@ router.get('/', function(req, res, next){
             tmp.avalue = (cell2? cell2.v : undefined);
             csdArray[i] = tmp;
 
-            console.log(csdArray[i]);
+            // console.log(csdArray[i]);  // Debug: show datas in ChartSalesData object type.
         }
 
         // Create Chart Data Object 
-        var cdtitle = new ChartData((ctv? ctv.v : undefined), csdArray);
+        var cdtitle = new ChartData((ctv? ctv.v : 'NO TITLE'), csdArray);
 
         result = JSON.stringify(cdtitle);
     }
     catch(e) {
-        console.log('Excel file processing: error happened');
+        console.log('[Error] Excel file processing failed.');
     }
 
-    console.log(req.query.type);
     switch (req.query.type) {
         case '101': 
             // Send to Pug template as a JSON Object.
@@ -83,9 +83,9 @@ function GenerateFile(data) {
         var ws_name = d1[0];    // Get first line as the sheet name. 
 
         // Step 1: Get AOA object.
-        for (var i=1; i<d1.length; i++) 
+        for (var i=1; i<d1.length; i++)
             if (d1[i].search(/,/i)>0) 
-                tmpAOA.push(d1[i].split(','));
+                tmpAOA.push(temp_data_list = d1[i].split(',').map((x) => Number(x)? Number(x) : x));
 
         // Step 2: Create workbook object and generate file.
         var ws = XLSX.utils.aoa_to_sheet(tmpAOA);
