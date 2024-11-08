@@ -1,22 +1,22 @@
-var express = require('express');
-var router = express.Router();
-var multer = require('multer');
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const crypto = require('crypto');
 
 // Set destination path and file name regulation for multer.
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
   destination: function(req, file, cb){
     cb(null, './public/uploadcache');
   },
   filename: function(req, file, cb) {
-    var extname = file.originalname.substring(file.originalname.lastIndexOf('.') + 1, file.originalname.length).toLocaleLowerCase();
-    var uploaded_file_name =  'tmp' + Date.now() + '.' + extname;
-
+    const fn = /(.+)\.(\w+)/g.exec(file.originalname);
+    const uploaded_file_name = `${fn[1]}-${crypto.randomUUID()}.${fn[2]}`;
     cb(null,uploaded_file_name);
   }
 });
 
 // Accept only one file.
-var upload = multer( {storage: storage} ).single('srcFile');
+var upload = multer( {storage: storage} ).single('file')
 
 // GET to the upload form page.
 router.get('/form', function(req, res, next) {
@@ -24,28 +24,25 @@ router.get('/form', function(req, res, next) {
 });
 
 // POST to the upload process
-router.post('/handle', upload, function(req, res, next) {
-  var errcode = 0;
-
+router.post('/handler', function(req, res, next) {
   upload(req, res, function(err) {
-  
+    let response_code = 200;
     if (err instanceof multer.MulterError) {
       // multer error
       console.log(err);
-
-      errcode = -1;
+      response_code = 502;
     } else if (err) {
       // unknown error
       console.log(err);
-
-      errcode = -2;
-    } else {
-      // everything goes fine.
-      errcode = 0;
-    }
+      response_code = 500;
+    } 
+    res.status(response_code).send({
+      code: response_code,
+      message: err? err.message: "File upload success!",
+      uploaded_file_path: `/upload/cache/${req.file.filename}`,
+      // uploaded_file_info: req.file
+    });
   });
-  
-  res.render('section4-upload-result', { errcode: errcode, uploadedfile: req.file });
 });
 
 // GET redirect to the real uploaded file's directory 

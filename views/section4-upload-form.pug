@@ -1,21 +1,22 @@
 extends iframe-layout
 
 block scripts
-  script(src="/javascripts/jquery-3.3.1.min.js")
+  link(rel='stylesheet', href='/stylesheets/section4-upload-form-style.css')
   script(src="/javascripts/section4-upload-form.js")
 
 block content
-  form(action="/upload/handle", name="uploadForm", method="post", enctype="multipart/form-data")
-    input(type="file", name="srcFile", id="srcFile", style="width:85%")
-    p 注：上传文件仅限&nbsp;
-      span(id="limitedextnameLabel")
-      | &nbsp;格式，大小限制在&nbsp;
-      span(id="limitedsizeLabel")
-      | &nbsp;以内。
-    p
-      div(style="width:95%", align="right")
-        input(type="submit", value="开始上传文件", style="cursor:pointer; width:180px; height:50px; background:#456590; color:#EEEEEE; font-size:14pt")
-
-  br
+  div(class="upload_box", ondragover="onUploadBoxDragOver(event);", ondrop="onUploadBoxDrop(event);")
+    input(type="file", name="inputFiles", id="inputFiles", onchange="inputFilesChange(event);", multiple=true, hidden=true)
+    label(for="inputFiles", class="upload_box_open_file_dialog")
+      div
+        span(id="inputFilesDescription")
+      div 
+        strong 点击选择
+        span 或拖放文件到此处
+      div
+        span(id="selectedFilesDescription")
+    div
+      button(class="upload_box_button", type="submit", onclick="uploadFiles();") 上传文件
+  div(id="uploadResult")
   p
     h3 This is Section4-Upload-Form. (Testing upload file with Multer)
