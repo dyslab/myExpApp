@@ -4,7 +4,9 @@ block content
   //- QR码、条形码测试。 QRcode, Barcode test.
   div#s1-accordion
 
-    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lotto_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 彩票开奖JSON查询示例（Server Side JS + node-fetch实现）
+    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lotto_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 
+      strong 彩票开奖JSON查询示例 
+      i Server Side JS + node-fetch 实现
     div
       form(action="/lotto/json", target="frameLottoWindow", method="post")
         table 
@@ -22,7 +24,9 @@ block content
       p
         iframe.wb2(name="frameLottoWindow", id="frameLottoWindow", width="100%" height="250", marginwidth="0", marginheight="0", hspace="0", vspace="0")
 
-    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lunar_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 农历JSON查询示例（Server Side JS + node-fetch实现）
+    h3 [!网上接口已停用，采用本地 http://localhost:8001/bufferdata/lunar_sample.json 样本数据，详见 /routes/index.js 文件相关部分] 
+      strong  农历JSON查询示例 
+      i Server Side JS + node-fetch 实现 
     div
       table
         tr
@@ -34,7 +38,9 @@ block content
       p
         a.go1(href="https://www.sojson.com/api/lunar.html", target="_blank") SOJSON.COM 农历查询API接口（已停用）
 
-    h3 QR码示例（Server Side JS + Canvas实现）
+    h3
+      strong QR码示例 
+      i Server Side JS + Canvas / Public API (https://api.apgy.in/qr/) 客户端 fetch 实现
     div
       //- QRcode test.
       p
@@ -42,7 +48,7 @@ block content
           tr(valign="top")
             td
               form(id="QRform", action="/qr", target="frameQRCode", method="post")
-                input.s1(type="text", name="strQRCode", id="strQRCode", value="I💕U", width="10", maxlength="30", style={ width: "300px" } onfocus="javascript:this.select();")
+                input.s1(type="text", name="strQRCode", id="strQRCode", value="We are family 👨‍👩‍👦👣", width="10", maxlength="30", style={ width: "260px" } onfocus="javascript:this.select();")
                 input(type="hidden", name="bQRSave", id="bQRSave", value="false")
             td
               button.qr(onclick="submitQRcode()") QR Code Output
@@ -54,8 +60,15 @@ block content
             td
               div
                 iframe.wb2(name="frameQRCode", id="frameQRCode", width="180", height="180")
+            td
+              button.qr(onclick="fetchQRcodeViaPublicApi()") Get QR Code via Public API
+            td
+              div.wb2
+                image(name="imgApiQRCode", id="imgApiQRCode", width="180", height="180")
 
-    h3 条形码示例（Server Side JS + Canvas实现）
+    h3
+      strong 条形码示例 
+      i Server Side JS + Canvas 实现 
     div
       //- Barcode test.
       p
@@ -75,7 +88,9 @@ block content
               div
                 canvas.wb2(id="barcode", width="300", height="160")
 
-    h3 17Track查询（Client Side JS嵌入实现）
+    h3
+      strong 17Track查询 
+      i Client Side JS嵌入实现 
     div
       table(width="640")
         tr
@@ -99,7 +114,9 @@ block content
             div(id="YQContainer", width="100%")
               | 暂无查询内容！
 
-    h3 快递100 iframe方式查询接口
+    h3
+      strong 快递100 
+      i iframe方式查询接口 
     div
       p
         span 因Kuaidi100原 
@@ -110,8 +127,8 @@ block content
       iframe(name="kuaidi100", src="https://www.kuaidi100.com/frame/app/index2.html", width="560", height="400", marginwidth="0", marginheight="0", hspace="0", vspace="0", frameborder="0", scrolling="no")
 
 block footer-scripts
+  script(src="https://www.17track.net/externalcall.js")
   script(src="/javascripts/JsBarcode.all.min.js")
-  script(src="//www.17track.net/externalcall.js")
   script(src="/javascripts/tracking.js")
   script(src="/javascripts/codeset.js")
   script(src="/javascripts/lunarcheck.js")
